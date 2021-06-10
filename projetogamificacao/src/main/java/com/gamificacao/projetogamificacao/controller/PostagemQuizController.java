@@ -36,9 +36,9 @@ public class PostagemQuizController {
 	public ResponseEntity<PostagemQuiz> getPostagemById(@PathVariable long id){
 		return repository.findById(id).map (postQuiz -> ResponseEntity.ok(postQuiz)).orElse(ResponseEntity.notFound().build());
 	}	
-	@GetMapping("/post-grupos")
-	public ResponseEntity<List<PostagemQuiz>> buscarPostQuiz(Usuario usuario){
-		return ResponseEntity.status(HttpStatus.OK).body(usuarioService.buscarPostQuiz(usuario));
+	@GetMapping("/buscar-post/{id}")
+	public ResponseEntity<List<PostagemQuiz>> buscarPostQuizUsuario(@PathVariable(value = "id") Long id){
+		return ResponseEntity.status(HttpStatus.OK).body(usuarioService.buscarPostQuiz(id));
 	}
 	@PostMapping 
 	public ResponseEntity<PostagemQuiz> postPostagem(@RequestBody PostagemQuiz postagemQuiz){

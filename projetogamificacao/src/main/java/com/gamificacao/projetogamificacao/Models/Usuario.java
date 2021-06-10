@@ -38,10 +38,10 @@ public class Usuario {
 	@NotNull
 	private String email;
 	
-	@NotNull
+	
 	private long celular;
 	
-	@NotNull (message = "O campo Data de nascimento de  não pode ser vazio!")
+	
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dataNascimento;
 	
@@ -66,7 +66,7 @@ public class Usuario {
 	private List<AprovacaoAmigos> meusPedidosAmizade = new ArrayList<>();
 	
 	@OneToMany(mappedBy = "criador")
-	@JsonIgnoreProperties({"criador"})
+	@JsonIgnoreProperties({"criador", "listaInscricaoGU"})
 	private List<Grupo> gruposCriados = new ArrayList<>();
 	
 	@OneToMany(mappedBy = "usuarioAtividade")
@@ -77,20 +77,41 @@ public class Usuario {
 	private String senha;
 	
 	private String foto;
-	
-	@NotNull
-	private String avatar; //Substitui icone, verificar com grupo
-	
+		
 	@OneToMany (mappedBy = "usuarioInscricao", cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties({"usuarioInscricao" })
 	private List<InscricaoGrupo> listaInscricaoUG = new ArrayList<>();
 	
 	@OneToMany (mappedBy = "usuarioResponsavel", cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties({"usuarioResponsavel" })
 	private List<Tarefa> listaTarefas = new ArrayList<>();
 	
 	@ManyToMany
 	private List<PostagemQuiz> quizRespondido = new ArrayList<PostagemQuiz>();
 	
 	private String descricao;
+	
+	private String linkedin;
+	
+	private String gitHub;
+	
+	
+
+	public String getLinkedin() {
+		return linkedin;
+	}
+
+	public void setLinkedin(String linkedin) {
+		this.linkedin = linkedin;
+	}
+
+	public String getGitHub() {
+		return gitHub;
+	}
+
+	public void setGitHub(String gitHub) {
+		this.gitHub = gitHub;
+	}
 
 	public long getId() {
 		return id;
@@ -188,14 +209,6 @@ public class Usuario {
 
 	public void setFoto(String foto) {
 		this.foto = foto;
-	}
-
-	public String getAvatar() {
-		return avatar;
-	}
-
-	public void setAvatar(String avatar) {
-		this.avatar = avatar;
 	}
 
 	public List<InscricaoGrupo> getListaInscricaoUG() {

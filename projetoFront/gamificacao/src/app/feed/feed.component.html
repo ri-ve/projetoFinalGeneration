@@ -4,12 +4,12 @@
         <div class="profile-card">
             <header>
               <!-- here’s the avatar -->
-              <a target="_blank" href="#">
-                <img src="https://avatars.githubusercontent.com/u/76970525?v=4" class="hoverZoomLink">
+              <a target="_blank" routerLink='/perfil'>
+                <img src="{{foto}}" class="hoverZoomLink">
               </a>
               <!-- the username -->
               <h1>
-                      Rodrigo Teixeira
+                      {{nome}}
                     </h1>
               <!-- and role or location -->
               <h2>
@@ -19,54 +19,36 @@
             <!-- bit of a bio; who are you? -->
             <div class="profile-bio">
               <p>
-                Extremamente motivado, em constante desenvolvimento de minhas habilidades.
+                {{usuario.descricao}}
               </p>
             </div>
             <!-- some social links to show off -->
-            <ul class="profile-social-links">
+            <ul class="profile-social-links d-flex justify-content-center">
               <li>
-                <a target="_blank" href="https://www.facebook.com/creativedonut">
-                  <i class="fa fa-facebook"></i>
+                <a target="_blank" href="{{usuario.linkedin}}">
+                  <i class="fa fa-linkedin"></i>
                 </a>
               </li>
               <li>
-                <a target="_blank" href="https://twitter.com/dropyourbass">
-                  <i class="fa fa-twitter"></i>
-                </a>
-              </li>
-              <li>
-                <a target="_blank" href="https://github.com/vipulsaxena">
+                <a target="_blank" href="{{usuario.gitHub}}">
                   <i class="fa fa-github"></i>
-                </a>
-              </li>
-              <li>
-                <a target="_blank" href="https://www.behance.net/vipulsaxena">
-                  <i class="fa fa-behance"></i>
                 </a>
               </li>
             </ul>
           </div>
       </div>
       <div class="list-group mt-tarefas lista">
-        <a href="#" class="list-group-item list-group-item-action">Lista de Tarefas</a>
+        <a routerLink="/tarefas" class="list-group-item list-group-item-action">Lista de Tarefas</a>
       
-        
-        <a href="#" class="list-group-item list-group-item-action list-group-item-primary">Tarefa 1</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">Tarefa 2</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-success">Tarefa 3</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-danger">Tarefa 4</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Tarefa 5</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-info">Tarefa 6</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-light">Tarefa 7</a>
-        <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Tarefa 8</a>
+        <a routerLink='' class="list-group-item list-group-item-action list-group-item-primary" *ngFor = 'let tarefa of usuario.listaTarefas'>{{tarefa.titulo}}</a> 
       </div>
     </div>
 
 
     <div class="col-md-6 text-center">
         <div class="d-flex align-items-center form-gorup text-center justify-content-center" >
-            <input type="text" class="col-md-9 text-center justify-content-center" style="height: 40px;" placeholder="Status - Postagem de Pensamentos">
-            <button class="btn btn-info ml-3 justify-content-center" style="height: 40px;">Postar</button>
+            <input [(ngModel)] = 'atividades.atividade' type="text" class="col-md-9 text-center justify-content-center" style="height: 40px;" placeholder="Status - Postagem de Pensamentos">
+            <button class="btn btn-info ml-3 justify-content-center" style="height: 40px;" (click)='publicar()'>Postar</button>
         </div>
 
         <div class="container-fluid border rounded mt-5">
@@ -87,17 +69,9 @@
 
     <div class="col-md-3 text-center">       
         <div class="list-group lista">
-            <a href="#" class="list-group-item list-group-item-action">Lista de Grupos</a>
-          
+            <a routerLink='' class="list-group-item list-group-item-action">Lista de Grupos</a>
             
-            <a href="#" class="list-group-item list-group-item-action list-group-item-primary">Grupo 1</a>
-            <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">Grupo 2</a>
-            <a href="#" class="list-group-item list-group-item-action list-group-item-success">Grupo 3</a>
-            <a href="#" class="list-group-item list-group-item-action list-group-item-danger">Grupo 4</a>
-            <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Grupo 5</a>
-            <a href="#" class="list-group-item list-group-item-action list-group-item-info">Grupo 6</a>
-            <a href="#" class="list-group-item list-group-item-action list-group-item-light">Grupo 7</a>
-            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Grupo 8</a>
+            <a routerLink='' class="list-group-item list-group-item-action list-group-item-primary" *ngFor = 'let grupo of usuario.listaInscricaoUG'>{{grupo.grupoInscricao.nome}}</a>
           </div>
     </div>   
 </div>

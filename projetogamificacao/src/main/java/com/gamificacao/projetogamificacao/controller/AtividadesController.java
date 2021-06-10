@@ -19,11 +19,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gamificacao.projetogamificacao.Models.Atividades;
-import com.gamificacao.projetogamificacao.Models.PostagemQuiz;
 import com.gamificacao.projetogamificacao.Models.Usuario;
 import com.gamificacao.projetogamificacao.Repository.AtividadesRepository;
 import com.gamificacao.projetogamificacao.Service.AtividadesService;
-import com.gamificacao.projetogamificacao.Service.UsuarioService;
 
 @RestController
 @CrossOrigin ("*")
@@ -31,7 +29,6 @@ import com.gamificacao.projetogamificacao.Service.UsuarioService;
 public class AtividadesController {
 	
 	private @Autowired AtividadesRepository atividadesRepository;
-	private @Autowired UsuarioService usuarioService;
 	private @Autowired AtividadesService atividadesService;
 	
 	@GetMapping ("/{id_atividades}")
@@ -42,19 +39,13 @@ public class AtividadesController {
 	public Optional<List<Atividades>> getAllAtividades(){
 		return Optional.ofNullable(atividadesRepository.findAll());
 	}
-	@GetMapping ("/atividades-amigos")
-	public ResponseEntity<List<Atividades>> buscarAtividadesAmigos(Usuario usuario){
-		return ResponseEntity.status(HttpStatus.OK).body(atividadesService.atividadesAmigos(usuario));
+	@GetMapping ("/atividades-amigos/{id}")
+	public ResponseEntity<List<Atividades>> buscarAtividadesAmigos(@PathVariable(value = "id") Long id){
+		return ResponseEntity.status(HttpStatus.OK).body(atividadesService.atividadesAmigos(id));
 	}
-	@GetMapping("/postagem-grupos")
-	public List<PostagemQuiz> getPostQuizByUser(Usuario user){
-		return usuarioService.buscarPostQuiz(user);
-	}	
-	@PostMapping ("/{idUsuario}") 
-	public ResponseEntity<Optional<Usuario>> postAtividade(
-			@PathVariable(value = "idUsuario") Long idUsuario,
-			@Valid @RequestBody Atividades status){
-		return ResponseEntity.status(201).body(atividadesService.criarAtividade(idUsuario, status));
+	@PostMapping
+	public ResponseEntity<Optional<Atividades>> postAtividade(@Valid @RequestBody Atividades status){
+		return ResponseEntity.status(201).body(atividadesService.criarAtividade(status));
 	}
 	public @PutMapping("/editar-status") 
 	ResponseEntity<Atividades> editarAtividade(@RequestBody Atividades novaAtividade){

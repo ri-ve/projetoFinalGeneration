@@ -31,18 +31,14 @@ public class PostagemQuiz {
 	@Size(min = 10, max = 200)
 	private String pergunta;
 	@NotNull
-	@Size(min = 10, max = 200)
 	private String respostaCorreta;
 
 	@NotNull
-	@Size(min = 10, max = 200)
 	private String respostaFalsa;
 
 	@NotNull
-	@Size(min = 10, max = 200)
 	private String respostaFalsa2;
 	
-	@NotNull
 	private int pontuacao;
 	
 	@NotNull

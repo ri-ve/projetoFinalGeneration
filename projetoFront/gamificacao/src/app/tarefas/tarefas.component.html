@@ -1,204 +1,124 @@
 <div class="container-fluid bg-cor">
-    <div class="row">
-        <div class="col-md-12">
-   
-         
-          <div class="cor rounded">
-            <div class="mt-5">
-              <h1 class="fs-54 text-start p-2">Tarefas</h1>
-            </div>
-           </div>
-           
-          <div class="d-flex justify-content-center mt-3">
-            <button type="button" class=" btn btn-outline-primary" data-toggle="modal" data-target="#criarTarefa">
-                Nova tarefa
-              </button>
-        </div>
-
-
-            <svg viewBox="0 0 0 0" style="position: absolute; z-index: -1; opacity: 0;" >
-                <defs>
-                  <linearGradient id="boxGradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="25" y2="25">
-                    <stop offset="0%" stop-color="#27FDC7" />
-                    <stop offset="100%" stop-color="#0FC0F5" />
-                  </linearGradient>
-              
-                  <linearGradient id="lineGradient">
-                    <stop offset="0%" stop-color="#0FC0F5" />
-                    <stop offset="100%" stop-color="#27FDC7" />
-                  </linearGradient>
-              
-                  <path id="todo__line" stroke="url(#lineGradient)" d="M21 12.3h168v0.1z"></path>
-                  <path id="todo__box" stroke="url(#boxGradient)" d="M21 12.7v5c0 1.3-1 2.3-2.3 2.3H8.3C7 20 6 19 6 17.7V7.3C6 6 7 5 8.3 5h10.4C20 5 21 6 21 7.3v5.4"></path>
-                  <path id="todo__check" stroke="url(#boxGradient)" d="M10 13l2 2 5-5"></path>
-                  <circle id="todo__circle" cx="13.5" cy="12.5" r="10"></circle>
-                </defs>
-              </svg>
-              
-              <div class="todo-list rounded mt-3 mb-5">
-                <label class="todo">
-                  <input class="todo__state" type="checkbox" />
-              
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 25" class="todo__icon">
-                    <use xlink:href="#todo__line" class="todo__line"></use>
-                    <use xlink:href="#todo__box" class="todo__box"></use>
-                    <use xlink:href="#todo__check" class="todo__check"></use>
-                    <use xlink:href="#todo__circle" class="todo__circle"></use>
-                  </svg>
-              
-                  <div class="todo__text">Do a very important task
-                  </div>
-                  <div class="d-flex justify-content-end">
-                    <a type="button" class="abrir mt-2" data-toggle="modal" data-target="#Tarefa">
-                      Abrir</a>
-                  </div>
-                </label>
-              
-                <label class="todo">
-              
-                  <input class="todo__state" type="checkbox" />
-              
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 25" class="todo__icon">
-                    <use xlink:href="#todo__line" class="todo__line"></use>
-                    <use xlink:href="#todo__box" class="todo__box"></use>
-                    <use xlink:href="#todo__check" class="todo__check"></use>
-                    <use xlink:href="#todo__circle" class="todo__circle"></use>
-                  </svg>
-              
-                  <div class="todo__text">Another important task</div>
-                    <div class="d-flex justify-content-end">
-                      <a type="button" class="abrir mt-2" data-toggle="modal" data-target="#Tarefa">
-                        Abrir</a>
-                    </div>
-              
-                </label>
-              
-                <label class="todo">
-                  <input class="todo__state" type="checkbox" />
-              
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 25" class="todo__icon">
-                    <use xlink:href="#todo__line" class="todo__line"></use>
-                    <use xlink:href="#todo__box" class="todo__box"></use>
-                    <use xlink:href="#todo__check" class="todo__check"></use>
-                    <use xlink:href="#todo__circle" class="todo__circle"></use>
-                  </svg>
-              
-                  <div class="todo__text">Not so important task</div>
-                  <div class="d-flex justify-content-end d-flex align-items-end">
-                    <a type="button" class="abrir" data-toggle="modal" data-target="#Tarefa">
-                      Abrir</a>
-                  </div>
-                </label>
-
-                <label class="todo">
-                  <input class="todo__state" type="checkbox" />
-              
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 25" class="todo__icon">
-                    <use xlink:href="#todo__line" class="todo__line"></use>
-                    <use xlink:href="#todo__box" class="todo__box"></use>
-                    <use xlink:href="#todo__check" class="todo__check"></use>
-                    <use xlink:href="#todo__circle" class="todo__circle"></use>
-                  </svg>
-              
-                  <div class="todo__text">Not so important task</div>
-                  <div class="d-flex justify-content-end d-flex align-items-end">
-                    <a type="button" class="abrir" data-toggle="modal" data-target="#Tarefa">
-                      Abrir</a>
-                  </div>
-                </label>
-
-                <label class="todo">
-                  <input class="todo__state" type="checkbox" />
-              
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 25" class="todo__icon">
-                    <use xlink:href="#todo__line" class="todo__line"></use>
-                    <use xlink:href="#todo__box" class="todo__box"></use>
-                    <use xlink:href="#todo__check" class="todo__check"></use>
-                    <use xlink:href="#todo__circle" class="todo__circle"></use>
-                  </svg>
-              
-                  <div class="todo__text">Not so important task</div>
-                  <div class="d-flex justify-content-end d-flex align-items-end">
-                    <a type="button" class="abrir" data-toggle="modal" data-target="#Tarefa">
-                      Abrir</a>
-                  </div>
-                </label>
-
-                <label class="todo">
-                  <input class="todo__state" type="checkbox" />
-              
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 25" class="todo__icon">
-                    <use xlink:href="#todo__line" class="todo__line"></use>
-                    <use xlink:href="#todo__box" class="todo__box"></use>
-                    <use xlink:href="#todo__check" class="todo__check"></use>
-                    <use xlink:href="#todo__circle" class="todo__circle"></use>
-                  </svg>
-              
-                  <div class="todo__text">Not so important task</div>
-                  <div class="d-flex justify-content-end d-flex align-items-end">
-                    <a type="button" class="abrir" data-toggle="modal" data-target="#Tarefa">
-                      Abrir</a>
-                  </div>
-                </label>
-              </div>
-
-              <!-- Modal -->
-  <div class="modal fade" id="Tarefa" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content bg-dark">
-        <div class="modal-header">
-          <h3 class="modal-title" id="TituloModalLongoExemplo">Título</h3>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <h5 class="text-center">Descrição</h5>
-           <p class="text-justify text-white"> Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.</p>
-           <div id="editar" class="collapse form-group text-center">
-            <h5 class="text-center">Novo Título</h5>
-          <input type="text" class="form-control bg-transparent text-white mb-2" placeholder="Novo Título">
-            <h5>Nova Descrição</h5>
-            <textarea class="form-control bg-transparent text-white" name="texto" id="texto" rows="3"></textarea>
-         </div>
-        </div>
-        <div class="modal-footer d-flex justify-content-center">
-          <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Fechar</button>
-          <button type="button" class="btn btn-outline-danger">Deletar</button>
-          <button type="button" class="btn btn-outline-primary" data-toggle="collapse" data-target="#editar">Editar</button>
-          <button type="button" class="btn btn-outline-success">Concluir</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-            <!-- Modal Criar Tarefas-->
-<div class="modal fade" id="criarTarefa" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content bg-dark">
-        <div class="modal-header">
-          <h5 class="modal-title" id="TituloModalCentralizado">Nova Tarefa</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <div class="form-group">
-                <label for="titulo">Título</label>
-                <input type="text" class="form-control bg-transparent text-white" id="titulo" placeholder="Title">
-            </div>
-            <div class="form-group">
-              <label for="titulo">Descrição</label>
-              <textarea class="form-control bg-transparent text-white" name="texto" id="texto" rows="3"></textarea>
+  <div class="row">
+      <div class="col-md-12">
+ 
+       
+        <div class="cor rounded">
+          <div class="mt-5">
+            <h1 class="fs-54 text-start p-2">Tarefas</h1>
           </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Fechar</button>
-          <button type="button" class="btn btn-outline-primary">Adicionar</button>
-        </div>
+         </div>
+         
+        <div class="d-flex justify-content-center mt-3">
+          <button type="button" class=" btn btn-outline-primary" data-toggle="modal" data-target="#criarTarefa">
+              Nova tarefa
+            </button>
+      </div>
+
+
+          <svg viewBox="0 0 0 0" style="position: absolute; z-index: -1; opacity: 0;" >
+              <defs>
+                <linearGradient id="boxGradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="25" y2="25">
+                  <stop offset="0%" stop-color="#27FDC7" />
+                  <stop offset="100%" stop-color="#0FC0F5" />
+                </linearGradient>
+            
+                <linearGradient id="lineGradient">
+                  <stop offset="0%" stop-color="#0FC0F5" />
+                  <stop offset="100%" stop-color="#27FDC7" />
+                </linearGradient>
+            
+                <path id="todo__line" stroke="url(#lineGradient)" d="M21 12.3h168v0.1z"></path>
+                <path id="todo__box" stroke="url(#boxGradient)" d="M21 12.7v5c0 1.3-1 2.3-2.3 2.3H8.3C7 20 6 19 6 17.7V7.3C6 6 7 5 8.3 5h10.4C20 5 21 6 21 7.3v5.4"></path>
+                <path id="todo__check" stroke="url(#boxGradient)" d="M10 13l2 2 5-5"></path>
+                <circle id="todo__circle" cx="13.5" cy="12.5" r="10"></circle>
+              </defs>
+            </svg>
+            
+            <div class="todo-list rounded mt-3 mb-5" >
+              <label class="todo" *ngFor='let item of user.listaTarefas'>
+                <input class="todo__state" type="checkbox" />
+            
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 25" class="todo__icon">
+                  <use xlink:href="#todo__line" class="todo__line"></use>
+                  <use xlink:href="#todo__box" class="todo__box"></use>
+                  <use xlink:href="#todo__check" class="todo__check"></use>
+                  <use xlink:href="#todo__circle" class="todo__circle"></use>
+                </svg>
+            
+                <div class="todo__text">{{item.titulo}}</div>
+                <div class="d-flex justify-content-end">
+                  <a ng-click="findTarefaById(item.id)" type="button" class="abrir mt-2" data-toggle="modal" data-target="#Tarefa">
+                    Abrir </a>
+                </div>
+              </label>
+            </div>
+
+            <!-- Modal -->
+<div class="modal fade" id="Tarefa" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h3 class="modal-title" id="TituloModalLongoExemplo">{{tarefa.titulo}}</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <h5 class="text-center">Descrição</h5>
+         <p class="text-justify text-white"> {{tarefa.descricao}}</p>
+         <div id="editar" class="collapse form-group text-center">
+          <h5 class="text-center">Novo Título</h5>
+        <input [(ngModel)]='tarefa.titulo' type="text" class="form-control bg-transparent text-white mb-2" placeholder="Novo Título">
+          <h5>Nova Descrição</h5>
+          <textarea [(ngModel)]='tarefa.descricao' class="form-control bg-transparent text-white" name="texto" id="texto" rows="3"></textarea>
+          <button type="button" class="btn btn-outline-success mt-3" (click)='atualizar()'>Salvar</button>
+       </div>
+       <div id="deletar" class="collapse text-center">
+         <h5>Tem certeza que deseja deletar tarefa?</h5>
+
+         <div class="d-flex justify-content-center mt-3 mb-3">
+          <button class="btn btn-outline-success btn-sm " >Não</button>
+          <button class="btn btn-outline-danger btn-sm ml-3" (click)='apagar()'>Sim</button>
+      </div>
+
+       </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-outline-danger" data-toggle="collapse" data-target="#deletar">Deletar</button>
+        <button type="button" class="btn btn-outline-primary" data-toggle="collapse" data-target="#editar">Editar</button>
       </div>
     </div>
   </div>
+</div>
 
-  
-  
+          <!-- Modal Criar Tarefas-->
+<div class="modal fade" id="criarTarefa" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalCentralizado">Nova Tarefa</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div class="form-group">
+              <label for="titulo">Título</label>
+              <input [(ngModel)]='tarefa.titulo' type="text" class="form-control bg-transparent text-white" id="titulo" placeholder="Title">
+          </div>
+          <div class="form-group">
+            <label for="titulo">Descrição</label>
+            <textarea [(ngModel)]='tarefa.descricao' class="form-control bg-transparent text-white" name="texto" id="texto" rows="3"></textarea>
+        </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-outline-primary" data-dismiss="modal" (click)='publicarTarefa()'> Adicionar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 

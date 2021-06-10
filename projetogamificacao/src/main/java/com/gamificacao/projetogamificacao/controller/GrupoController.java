@@ -29,22 +29,22 @@ public class GrupoController {
 	private @Autowired GrupoRepository repositoryGrupo;
 	private @Autowired GrupoService serviceGrupo;
 
-	@GetMapping("/buscar/todos")
+	@GetMapping
 	public ResponseEntity<List<Grupo>> getAllGrupos(){
 		return ResponseEntity.status(HttpStatus.OK).body(repositoryGrupo.findAll());
 	}
-	@GetMapping("/buscar/{id}")
+	@GetMapping("/{id}")
 	public ResponseEntity<?> getGrupoById(@Valid @PathVariable long id){
 		return repositoryGrupo.findById(id)
 				.map(grupo -> ResponseEntity.ok(grupo))
 				.orElse(ResponseEntity.notFound().build());
 	}
-	@DeleteMapping("/apagar/{id}")
+	@DeleteMapping("/{id}")
 	public ResponseEntity<?> deleteGrupoById(@Valid @PathVariable long id){
 		repositoryGrupo.deleteById(id);
 		return ResponseEntity.status(HttpStatus.OK).body(null); 		
 	}
-	@PutMapping("{id_inscricao}/aceito")
+	@PutMapping("/aceitar/{id_inscricao}")
 	public ResponseEntity<?> aceitarInscricao(
 			@PathVariable (value= "id_inscricao") Long idInscricao)
 			{ serviceGrupo.aceitarUsuario(idInscricao);

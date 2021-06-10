@@ -44,14 +44,13 @@ public class UsuarioController  {
 	public ResponseEntity<List<Usuario>> getAllUsuarios(){
 		return ResponseEntity.ok(repositoryUser.findAll());
 	}
-	@GetMapping ("/id/{id}")
+	@GetMapping ("/{id}")
 	public ResponseEntity<Usuario> getUsuarioById (@PathVariable long id){
 		return repositoryUser.findById(id).map(usuario -> ResponseEntity.ok(usuario)).orElse(ResponseEntity.notFound().build());
 	}
-	@GetMapping ("/nome/sobrenome/{nome}/{sobrenome}")
-	public ResponseEntity <?> getByNomeAndSobrenome (@PathVariable String nome, @PathVariable String sobrenome){
-		Optional <List<Usuario>> pesquisaUsuario = repositoryUser.findAllByNomeContainingOrSobrenomeContainingIgnoreCase(nome, sobrenome);
-		return pesquisaUsuario.map(user -> ResponseEntity.ok(user)).orElse(ResponseEntity.notFound().build()); 
+	@GetMapping ("/nome-sobrenome")
+	public ResponseEntity <?> getByNomeOrSobrenome (@RequestBody String pesquisa){   
+		return ResponseEntity.ok(repositoryUser.findAllByNome(pesquisa)); 
 	}
 	@GetMapping("/lista-aprovacao")
 	public ResponseEntity<List<AprovacaoAmigos>> listaAprovacaoAmigos(Usuario usuario){
@@ -75,7 +74,7 @@ public class UsuarioController  {
 		return ResponseEntity.status(HttpStatus.CREATED)
 				.body(usuarioService.cadastrarUsuario(usuario));
 	}
-	@PostMapping("/{id_usuario}/novo/grupo")
+	@PostMapping("/{id_usuario}/novo-grupo")
 	public ResponseEntity<Usuario> criarGrupo(
 			@PathVariable(value = "id_usuario") Long idUsuario,
 			@Valid @RequestBody Grupo novoGrupo){
@@ -91,7 +90,7 @@ public class UsuarioController  {
 				.map(inscricao -> ResponseEntity.status(201).body(inscricao))
 			.orElse(ResponseEntity.status(400).build());
 	}
-	@PostMapping("/post/pensamentos")
+	@PostMapping("/post-pensamentos")
 	public ResponseEntity<Atividades> postagemPensamentos(@RequestBody Atividades postagem){
 		return ResponseEntity.status(HttpStatus.CREATED).body(atividadesRepository.save(postagem));
 	}
@@ -104,7 +103,7 @@ public class UsuarioController  {
 	@PostMapping("/pedir-amizade")
 	public ResponseEntity<Optional<AprovacaoAmigos>> pedirAmizade(
 			@RequestBody Usuario usuarioPedindo, 
-			@RequestBody Usuario usuarioPrincipal){
+			Usuario usuarioPrincipal){
 		return ResponseEntity.status(HttpStatus.OK).body(usuarioService.pedirAmizade(usuarioPedindo, usuarioPrincipal));
 	}
 	@PutMapping("/aceitar-amizade")

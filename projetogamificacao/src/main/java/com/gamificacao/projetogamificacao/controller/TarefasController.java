@@ -39,11 +39,10 @@ public class TarefasController {
 		return tarefaRepository.findById(id).map(tarefa -> ResponseEntity.ok(tarefa))
 				.orElse(ResponseEntity.notFound().build());
 	}
-	@PostMapping("/{id}")
+	@PostMapping
 	public ResponseEntity<?> adicionarTarefa(
-			@Valid @RequestBody Tarefa tarefa, 
-			@PathVariable(value = "id") Long idUser) {
-		return tarefasService.criarTarefa(tarefa, idUser)
+			@Valid @RequestBody Tarefa tarefa) {
+		return tarefasService.criarTarefa(tarefa)
 				.map(tarefaCriada -> ResponseEntity.status(HttpStatus.CREATED)
 						.body(tarefaCriada))
 				.orElse(ResponseEntity.status(400).build());	

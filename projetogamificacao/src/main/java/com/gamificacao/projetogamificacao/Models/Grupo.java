@@ -18,6 +18,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 @Entity
 @Table (name = "tb_grupo")
@@ -40,12 +42,14 @@ public class Grupo {
 	private String icone;
 	
 	@OneToMany (mappedBy = "grupoInscricao", cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties("grupoInscricao")
 	private Set<InscricaoGrupo> listaInscricaoGU = new HashSet<>();
 	
-	@OneToMany (mappedBy = "grupoPostQuiz", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+	@OneToMany (mappedBy = "grupoPostQuiz", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties("grupoPostQuiz")
 	private List<PostagemQuiz> listaPostQuiz = new ArrayList<>();
 	
-	@ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
+	@ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
 	@JoinColumn(name = "criador_id")
 	private Usuario criador;
 

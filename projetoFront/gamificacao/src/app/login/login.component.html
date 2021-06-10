@@ -22,22 +22,22 @@
 
                         <div class="form-group text-center mt-4 mb-1">
                             <label for="usuario">NICKNAME</label>
-                            <input class='form-control color1' type="text" name="usuario" id="usuario">
+                            <input [(ngModel)]='usuarioLogin.usuario' class='form-control color1' type="text" name="usuario" id="usuario">
                         </div>
         
                         <div class="form-group text-center mt-2 mb-1">
                             <label for="senha">SENHA</label>
-                            <input class='form-control color2' type="password" name="senha" id="senha">
+                            <input [(ngModel)]='usuarioLogin.senha' class='form-control color2' type="password" name="senha" id="senha">
                         </div>
     
                             <a class="text-center text-white">Esqueceu sua senha?</a>
 
                         <div class="text-center mt-2 mb-2">
-                            <button type="submit" class="btn corBotao">Entrar</button>
+                            <button type="submit" class="btn corBotao" (click)='login()'>Entrar</button>
                         </div>
         
                         <div class="text-center">
-                            <button type="submit" class="btn corBotao" routerLink="/modal" data-toggle="modal" data-target="#modalExemplo">Criar conta</button>
+                            <button type="submit" class="btn corBotao" data-toggle="modal" data-target="#modalExemplo">Criar conta</button>
                         </div> 
 
                     </div>
@@ -82,7 +82,7 @@
 
 
 
-<div class="wrapper fotos">
+<!-- <div class="wrapper fotos">
     <h1 class="cardH1">Se me atacar, eu vou atacar!</h1>
     <div class="cols">
               <div class="col" ontouchstart="this.classList.toggle('hover');">
@@ -177,7 +177,7 @@
               </div>
          
           </div>
-   </div>
+   </div> -->
 
 
 
@@ -200,46 +200,51 @@
 
             <div class="form-group">
                 <label for="nome"></label>
-                <input class='form-control' type="text" name="nome" id="nome" placeholder='Nome'>
+                <input [(ngModel)]='usuario.nome' class='form-control' type="text" name="nome" id="nome" placeholder='Seu nome'>
             </div>
 
             <div class="form-group">
                 <label for="sobrenome"></label>
-                <input class='form-control' type="text" name="sobrenome" id="sobrenome" placeholder='Sobrenome'>
+                <input [(ngModel)]='usuario.sobrenome' class='form-control' type="text" name="sobrenome" id="sobrenome" placeholder='Sobrenome'>
             </div>
 
             <div class="form-group">
                 <label for="usuario"></label>
-                <input class='form-control' type="text" name="usuario" id="usuario" placeholder='Usuário'>
+                <input [(ngModel)]='usuario.usuario' class='form-control' type="text" name="usuario" id="usuario" placeholder='Usuário'>
             </div>
 
             <div class="form-group">
                 <label for="email"></label>
-                <input class='form-control' type="email" name="email" id="email" placeholder='E-mail'>
+                <input [(ngModel)]='usuario.email' class='form-control' type="email" name="email" id="email" placeholder='E-mail'>
             </div>
 
             <div class="form-group">
                 <label for="dataNascimento"></label>
-                <input class='form-control' type="date" name="dataNascimento" id="dataNascimento" placeholder='Data de Nascimento'>
+                <input [(ngModel)]='usuario.dataNascimento' class='form-control' type="date" name="dataNascimento" id="dataNascimento" placeholder='Data de Nascimento'>
             </div>
 
             <div class="form-group">
-                <label for="tel"></label>
-                <input class='form-control' type="number" name="tel" id="tel" placeholder='Telefone Celular'>
+                <label for="celular"></label>
+                <input [(ngModel)]='usuario.celular' class='form-control' type="number" name="celular" id="celular" placeholder='Telefone Celular'>
+            </div>
+
+            <div class="form-group">
+                <label for="foto"></label>
+                <input [(ngModel)]='usuario.foto' class='form-control' type="text" name="foto" id="foto" placeholder='Link da foto'>
             </div>
 
             <div class="form-group">
                 <label for="senha"></label>
-                <input class='form-control' type="password" name="senha" id="senha" placeholder='Sua senha'>
+                <input (input)='confirmSenha($event)' class='form-control' type="password" name="senha" id="senha" placeholder='Sua senha'>
             </div>
             
             <div class="form-group">
                 <label for="confirmSenha"></label>
-                <input class='form-control' type="password" name="confirmSenha" id="confirmSenha" placeholder='Confirme sua Senha'>
+                <input [(ngModel)]='usuario.senha' class='form-control' type="password" name="confirmSenha" id="confirmSenha" placeholder='Confirme sua Senha'>
             </div>
 
             <div class="text-center">
-                <a href="#" class="btn corBotao btn-lg active" role="button" aria-pressed="true">Cadastrar</a>
+                <a class="btn corBotao btn-lg active" role="button" aria-pressed="true" (click)='cadastrar()' data-dismiss="modal">Cadastrar</a>
             </div>
 
         </div>

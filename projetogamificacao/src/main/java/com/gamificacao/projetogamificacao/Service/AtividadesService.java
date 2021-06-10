@@ -16,8 +16,8 @@ import com.gamificacao.projetogamificacao.Repository.UsuarioRepository;
 @Service
 public class AtividadesService {
 
-	private @Autowired UsuarioRepository usuarioRepository;
 	private @Autowired AtividadesRepository atividadesRepository;
+	private @Autowired UsuarioRepository usuarioRepository;
 
 	/**
 	* Criar uma atividade 
@@ -29,12 +29,8 @@ public class AtividadesService {
 	*@since 1.0
 	*@author Allan 
 	*/
-		public Optional<Usuario> criarAtividade (Long idUsuario, Atividades atividades){
-		return usuarioRepository.findById(idUsuario).map(usuarioExistente -> {
-			atividades.setUsuarioAtividade(usuarioExistente);
-			atividadesRepository.save(atividades);
-			return usuarioRepository.findById(idUsuario);
-		}).orElse(Optional.empty());
+		public Optional<Atividades> criarAtividade (Atividades atividades){
+		return Optional.ofNullable(atividadesRepository.save(atividades));
 	}
 	/**
 	* Pegar todas as atividades dos amigos 
@@ -45,8 +41,8 @@ public class AtividadesService {
 	*@since 1.0
 	*@author Allan 
 	*/
-	public List<Atividades> atividadesAmigos(Usuario usuario) {
-		List<AprovacaoAmigos> amigos = usuario.getMeusPedidosAmizade();
+	public List<Atividades> atividadesAmigos(Long id) {
+		List<AprovacaoAmigos> amigos =  usuarioRepository.findById(id).get().getMeusPedidosAmizade();
 		List<Atividades> listaAtividades = new ArrayList<>();
 		amigos.forEach(amigo -> listaAtividades.addAll(amigo.getUsuarioPedindo().getAtividadesUsuario()));
 		return listaAtividades;

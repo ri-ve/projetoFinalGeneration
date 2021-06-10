@@ -54,6 +54,10 @@ public class UsuarioService {
 			byte[] encodeAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
 			String authHeader = "Basic " + new String(encodeAuth);
 			user.get().setToken(authHeader);
+			user.get().setUsuario(usuario.get().getUsuario());
+			user.get().setId(usuario.get().getId());
+			user.get().setNome(usuario.get().getNome());
+			user.get().setFoto(usuario.get().getFoto());
 			return user;
 		}
 		return null;
@@ -93,15 +97,18 @@ public class UsuarioService {
 		inscricao.setAprovacao(Aprovacao.NEGADO);
 		return Optional.ofNullable(inscricaoRepository.save(inscricao));
 	}
-	public List<PostagemQuiz> buscarPostQuiz (Usuario usuario){
-		Optional<List<InscricaoGrupo>> listaInscricao = inscricaoRepository.findByUsuarioInscricao(usuario);
+	public List<PostagemQuiz> buscarPostQuiz (Long id){
+		Optional<List<InscricaoGrupo>> listaInscricao = inscricaoRepository.findByUsuarioInscricao(repository.findById(id).get());
 		List<Grupo> grupos = new ArrayList<>();
 		List<PostagemQuiz> postagensGrupos = new ArrayList<>();		
 		listaInscricao
 			.get()
 			.stream()
-			.forEach(grupo -> grupos
-					.add(grupo.getGrupoInscricao()));	
+			.forEach(grupo -> {
+				if(grupo.getAprovacao().equals(Aprovacao.APROVADO)) {
+					grupos.add(grupo.getGrupoInscricao());
+				}	
+			});	
 		grupos
 			.forEach(listaPostagens -> listaPostagens
 					.getListaPostQuiz()

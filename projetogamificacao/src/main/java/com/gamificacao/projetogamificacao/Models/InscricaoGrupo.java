@@ -14,6 +14,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 @Entity
 @Table(name = "tb_inscricao")
@@ -28,12 +30,14 @@ public class InscricaoGrupo {
 	private Aprovacao aprovacao;
 		
 	
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
 	@JoinColumn(name = "usuario_id")
+	@JsonIgnoreProperties("listaInscricaoUG")
 	private Usuario usuarioInscricao; 
 	
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
 	@JoinColumn(name = "grupo_id")
+	@JsonIgnoreProperties({"listaInscricaoGU", "criador"})
 	private Grupo grupoInscricao;
 	
 
