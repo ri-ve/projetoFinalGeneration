@@ -28,6 +28,10 @@ export class FeedServiceService {
       }
 
       postAtividade(atividade: Atividades): Observable<Atividades>{
-        return this.http.post<Atividades>('http://localhost:8080/atividades', atividade, this.token)
+        return this.http.post<Atividades>('http://localhost:8080/usuario/post-pensamentos', atividade, this.token)
+      }
+
+      getAllPostQuiz(): Observable<PostagemQuiz[]>{
+        return this.http.get<PostagemQuiz[]>('http://localhost:8080/postagem-quiz',this.token)
       }
 }

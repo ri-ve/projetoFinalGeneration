@@ -8,7 +8,7 @@ export class Grupo{
     public descricao: string
     public foto: string
     public icone: string
-    public listaIncricaoGU: InscricaoGrupo[] //é set
+    public listaInscricaoGU: InscricaoGrupo[] //é set
     public listaPostQuiz: PostagemQuiz[]
     public criador: Usuario
 

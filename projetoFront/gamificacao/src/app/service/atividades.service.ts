@@ -13,13 +13,13 @@ export class AtividadesService {
   constructor(private http: HttpClient) { }
 
 token ={
-  headers: new HttpHeaders().set ('Athorization', environment.token)
+  headers: new HttpHeaders().set('Authorization', environment.token)
 }
 getAtividadesById(id: number): Observable<Atividades>{
   return this.http.get<Atividades>(`http://localhost:8080/atividades/${id}`, this.token)
 }
 
 getAllAtividades(): Observable<Atividades[]>{
-  return this.http.get<Atividades[]>('http://localhost:8080/atividades/todas',this.token)
+  return this.http.get<Atividades[]>('http://localhost:8080/atividades',this.token)
 }
 }

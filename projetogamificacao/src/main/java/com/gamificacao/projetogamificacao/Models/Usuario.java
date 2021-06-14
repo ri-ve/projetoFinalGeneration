@@ -65,12 +65,12 @@ public class Usuario {
 	@OneToMany (mappedBy = "usuarioPedindo", cascade = CascadeType.REMOVE)
 	private List<AprovacaoAmigos> meusPedidosAmizade = new ArrayList<>();
 	
-	@OneToMany(mappedBy = "criador")
-	@JsonIgnoreProperties({"criador", "listaInscricaoGU"})
+	@OneToMany(mappedBy = "criador", cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties(value = {"criador"}, allowSetters = true)
 	private List<Grupo> gruposCriados = new ArrayList<>();
 	
 	@OneToMany(mappedBy = "usuarioAtividade")
-	@JsonIgnoreProperties ("usuarioAtividade")
+	@JsonIgnoreProperties (value = "usuarioAtividade", allowSetters = true)
 	private List<Atividades> atividadesUsuario = new ArrayList<>();
 	
 	@NotNull
@@ -79,11 +79,11 @@ public class Usuario {
 	private String foto;
 		
 	@OneToMany (mappedBy = "usuarioInscricao", cascade = CascadeType.REMOVE)
-	@JsonIgnoreProperties({"usuarioInscricao" })
+	@JsonIgnoreProperties(value = {"usuarioInscricao"}, allowSetters = true)
 	private List<InscricaoGrupo> listaInscricaoUG = new ArrayList<>();
 	
 	@OneToMany (mappedBy = "usuarioResponsavel", cascade = CascadeType.REMOVE)
-	@JsonIgnoreProperties({"usuarioResponsavel" })
+	@JsonIgnoreProperties(value = "usuarioResponsavel" , allowSetters = true)
 	private List<Tarefa> listaTarefas = new ArrayList<>();
 	
 	@ManyToMany

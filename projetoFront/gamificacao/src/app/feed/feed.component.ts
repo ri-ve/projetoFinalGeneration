@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Atividades } from '../model/Atividades';
 import { PostagemQuiz } from '../model/PostagemQuiz';
 import { Usuario } from '../model/Usuario';
+import { AtividadesService } from '../service/atividades.service';
 import { FeedServiceService } from '../service/feed-service.service';
 import { UsuarioService } from '../service/usuario.service';
 
@@ -16,19 +17,20 @@ export class FeedComponent implements OnInit {
   nome = environment.nome
   foto = environment.foto
   id = environment.id
-  descricao = "colocar a descrição aqui"
 
-  usuario: Usuario = new Usuario
-  atividades: Atividades = new Atividades
+  usuario: Usuario = new Usuario()
+  atividades: Atividades = new Atividades()
 
-  listaPostagens: any[]
-  listaAtividades: any[]
+  listaPostagens: PostagemQuiz[]
+  listaAtividades: Atividades[]
+  
 
   constructor(
     private router: Router,
     private feedService: FeedServiceService,
-    private usuarioService: UsuarioService
-  ) { }
+    private usuarioService: UsuarioService,
+    private atividadeService: AtividadesService
+      ) { }
 
   ngOnInit(){
     window.scroll(0,0)
@@ -38,9 +40,8 @@ export class FeedComponent implements OnInit {
       this.router.navigate(['/login'])
     }
 
-    //this.findAllPostagens()
-    //this.findAllAtividades()
-    //this.juntarListas()
+    this.findPostagensByGrupoUsuario()
+    this.findAtividadesByUsuario()
     this.findUsuarioById()
   }
 
@@ -50,21 +51,18 @@ export class FeedComponent implements OnInit {
     })
   }
 
-  findAllPostagens(){
+  findPostagensByGrupoUsuario(){
     this.feedService.getPostagemByUsuario(this.id).subscribe((resp: PostagemQuiz[]) =>{
       this.listaPostagens = resp
+      console.log(this.listaPostagens)
     })
     }
 
-  findAllAtividades(){
-    this.feedService.getAtividadesByUsuario(this.id).subscribe((resp: Atividades[]) =>{
+  findAtividadesByUsuario(){
+    this.atividadeService.getAllAtividades().subscribe((resp: Atividades[]) =>{
       this.listaAtividades = resp
+      console.log(this.listaAtividades)
     })
-  }
-
-  juntarListas(){
-    this.listaPostagens.concat(this.listaAtividades)
-    console.log(this.listaPostagens)
   }
 
   publicar(){

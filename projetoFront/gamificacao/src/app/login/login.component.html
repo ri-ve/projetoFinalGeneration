@@ -14,48 +14,132 @@
 
         </div>
 
+  <!-- card login 
         <div class="col-md-6">
             <div class="row justify-content-end text-warning">
-                
+
                 <div class="cardLogin">
                     <div class="col-md-12 text-center">
 
                         <div class="form-group text-center mt-4 mb-1">
                             <label for="usuario">NICKNAME</label>
-                            <input [(ngModel)]='usuarioLogin.usuario' class='form-control color1' type="text" name="usuario" id="usuario">
+                            <input [(ngModel)]='usuarioLogin.usuario' class='form-control color1' type="text"
+                                name="usuario" id="usuario">
                         </div>
-        
+
                         <div class="form-group text-center mt-2 mb-1">
                             <label for="senha">SENHA</label>
-                            <input [(ngModel)]='usuarioLogin.senha' class='form-control color2' type="password" name="senha" id="senha">
+                            <input [(ngModel)]='usuarioLogin.senha' class='form-control color2' type="password"
+                                name="senha" id="senha">
                         </div>
-    
-                            <a class="text-center text-white">Esqueceu sua senha?</a>
+
+                        <a class="text-center text-white">Esqueceu sua senha?</a>
 
                         <div class="text-center mt-2 mb-2">
                             <button type="submit" class="btn corBotao" (click)='login()'>Entrar</button>
                         </div>
-        
+
                         <div class="text-center">
-                            <button type="submit" class="btn corBotao" data-toggle="modal" data-target="#modalExemplo">Criar conta</button>
-                        </div> 
+                            <button type="submit" class="btn corBotao" data-toggle="modal"
+                                data-target="#modalExemplo">Criar conta</button>
+                        </div>
 
                     </div>
-                </div>         
-                    
+                </div>
+
             </div>
-        </div>        
-        
+        </div> -->
+
+
+  <!-- card login -->
+
+    <div class="col-md-6">
+        <div class="row justify-content-end text-warning">
+          <section>
+            <div class="caixa">
+              <div class="background-img">
+                <div class="box">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <div class="content">
+                  
+                    <div class="form-group text-center mt-4 mb-1">
+                        <label for="usuario">NICKNAME</label>
+                        <input [(ngModel)]='usuarioLogin.usuario' class='form-control color1' type="text"
+                            name="usuario" id="usuario">
+                    </div>
+
+                    <div class="form-group text-center mt-2 mb-1">
+                        <label for="senha">SENHA</label>
+                        <input [(ngModel)]='usuarioLogin.senha' class='form-control color2' type="password"
+                            name="senha" id="senha">
+                    </div>
+
+                    <a class="text-center text-white">Esqueceu sua senha?</a>
+
+                    <div class="text-center mt-2 mb-2">
+                        <button type="submit" class="btn corBotao" (click)='login()'>Entrar</button>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn corBotao" data-toggle="modal"
+                            data-target="#modalExemplo">Criar conta</button>
+                    </div>
+
+                    
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </section>
+        </div> 
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
 
     <div class="container d-flex justify-content-between">
 
         <div class="row">
-        
+
             <div class="col-md-6">
-    
+
                 <h1 class="mb-5 mt-0">O QUE É GAMEFICAÇÃO?</h1>
-    
+
                 <p class="text-justify">
                     AUISDIAHDUIASIODASOSFASOIFH ASIFHASOIFHASCHASIOASCNIASO ICASNOCISAFIOASFASI
                     OFHOIASJ XAOXAAFNASIOFSAÇK KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKAUISDIAHDU
@@ -63,191 +147,291 @@
                     XAAFNASIOFSA ÇKKKKKKKKKKKKKKKKKKKKKKKK KKKKKKKKKKKKKKKKAUISDI AHDUIASIODASOSF
                     ASOIFHASIFHASOIFHAS CHASIOASCNIASOICAS NOCISAFIOASFASIOjtf dhsdfwswfwwsfegrnn
                 </p>
-    
+
             </div>
-    
+
             <div class="col-md-6 d-flex justify-content-end">
                 <img src="https://i.imgur.com/18cqhB5.png" style="height: 400px; width: 400px;" alt="">
             </div>
-                
+
         </div>
     </div>
 
 
+
+
+    <!-- cards que viram -->
+
+    <div class="row">
+        <div class="col-md-12 m-0">
+
+            <div class="wrapper fotos">
+                <h1 class="cardH1">Se me atacar, eu vou atacar!</h1>
+                <div class="cols">
+                    <div class="m-2" ontouchstart="this.classList.toggle('hover');">
+                        <div class="containerCards cardPessoal">
+                            <div class="front" style="background-image: url(https://i.imgur.com/H7mqw0h.jpg)">
+                                <div class="inner">
+                                    <p>Usuário</p>
+                                    <span>Desenvolvedor Jr.</span>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="inner">
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="m-2" ontouchstart="this.classList.toggle('hover');">
+                        <div class="containerCards cardPessoal">
+                            <div class="front" style="background-image: url(https://i.imgur.com/drqwsV5.jpg)">
+                                <div class="inner">
+                                    <p>Rodrigo</p>
+                                    <span>Desenvolvedor Jr.</span>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="inner">
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                                    <ul class="social-network">
+                                        <li>
+                                            <a href="https://www.instagram.com/allandeyvisond/" target="_blank"
+                                                class="icoInstagram">
+                                                <i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://github.com/AllanDeyvison" target="_blank" class="icoGithub">
+                                                <i class="fa fa-github" aria-hidden="true"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.linkedin.com/in/allan-deyvison-573b0a1b3/" target="_blank"
+                                                class="icoLikedin">
+                                                <i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="m-2" ontouchstart="this.classList.toggle('hover');">
+                        <div class="containerCards cardPessoal">
+                            <div class="front" style="background-image: url(https://i.imgur.com/3Dni1F0.jpg)">
+                                <div class="inner">
+                                    <p>Liz</p>
+                                    <span>Desenvolvedora Jr.</span>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="inner">
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                    <ul class="social-network">
+                                        <li>
+                                            <a href="https://www.instagram.com/allandeyvisond/" target="_blank"
+                                                class="icoInstagram">
+                                                <i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://github.com/AllanDeyvison" target="_blank" class="icoGithub">
+                                                <i class="fa fa-github" aria-hidden="true"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.linkedin.com/in/allan-deyvison-573b0a1b3/" target="_blank"
+                                                class="icoLikedin">
+                                                <i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="cols mt-0">
+                    <div class="m-2" ontouchstart="this.classList.toggle('hover');">
+                        <div class="containerCards cardPessoal">
+                            <div class="front" style="background-image: url(https://i.imgur.com/hih5mor.jpg)">
+                                <div class="inner">
+                                    <p>Allan</p>
+                                    <span>Desenvolvedor Jr.</span>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="inner">
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                                    <ul class="social-network">
+                                        <li>
+                                            <a href="https://www.instagram.com/allandeyvisond/" target="_blank"
+                                                class="icoInstagram">
+                                                <i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://github.com/AllanDeyvison" target="_blank" class="icoGithub">
+                                                <i class="fa fa-github" aria-hidden="true"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.linkedin.com/in/allan-deyvison-573b0a1b3/" target="_blank"
+                                                class="icoLikedin">
+                                                <i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="m-2" ontouchstart="this.classList.toggle('hover');">
+                        <div class="containerCards cardPessoal">
+                            <div class="front" style="background-image: url(https://i.imgur.com/7rn6yaP.jpg)">
+                                <div class="inner">
+                                    <p>Kátia</p>
+                                    <span>Desenvolvedora Jr.</span>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="inner">
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                        suscipit c.</p>
+                                    <ul class="social-network">
+                                        <li>
+                                            <a href="https://www.instagram.com/allandeyvisond/" target="_blank"
+                                                class="icoInstagram">
+                                                <i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://github.com/AllanDeyvison" target="_blank" class="icoGithub">
+                                                <i class="fa fa-github" aria-hidden="true"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.linkedin.com/in/allan-deyvison-573b0a1b3/" target="_blank"
+                                                class="icoLikedin">
+                                                <i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="m-2" ontouchstart="this.classList.toggle('hover');">
+                        <div class="containerCards cardPessoal">
+                            <div class="front" style="background-image: url(https://i.imgur.com/Paz0RuV.jpg)">
+                                <div class="inner">
+                                    <p>Rive</p>
+                                    <span>Desenvolvedor Jr.</span>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="inner">
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
+                                        suscipit c.</p>
+                                    <ul class="social-network">
+                                        <li>
+                                            <a href="https://www.instagram.com/allandeyvisond/" target="_blank"
+                                                class="icoInstagram">
+                                                <i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://github.com/AllanDeyvison" target="_blank" class="icoGithub">
+                                                <i class="fa fa-github" aria-hidden="true"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.linkedin.com/in/allan-deyvison-573b0a1b3/" target="_blank"
+                                                class="icoLikedin">
+                                                <i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+   
 </div>
 
 
 
 
-
-
-
-<!-- <div class="wrapper fotos">
-    <h1 class="cardH1">Se me atacar, eu vou atacar!</h1>
-    <div class="cols">
-              <div class="col" ontouchstart="this.classList.toggle('hover');">
-                  <div class="containerCards">
-                      <div class="front" style="background-image: url(https://unsplash.it/500/500/)">
-                          <div class="inner">
-                              <p>Diligord</p>
-                <span>Lorem ipsum</span>
-                          </div>
-                      </div>
-                      <div class="back">
-                          <div class="inner">
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col" ontouchstart="this.classList.toggle('hover');">
-                  <div class="containerCards">
-                      <div class="front" style="url(https://unsplash.it/511/511/)">
-                          <div class="inner">
-                              <p>Rocogged</p>
-                <span>Lorem ipsum</span>
-                          </div>
-                      </div>
-                      <div class="back">
-                          <div class="inner">
-                              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col" ontouchstart="this.classList.toggle('hover');">
-                  <div class="containerCards">
-                      <div class="front" style="background-image: url(https://unsplash.it/502/502/)">
-                          <div class="inner">
-                              <p>Strizzes</p>
-                <span>Lorem ipsum</span>
-                          </div>
-                      </div>
-                      <div class="back">
-                          <div class="inner">
-                              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col" ontouchstart="this.classList.toggle('hover');">
-                  <div class="containerCards">
-                      <div class="front" style="background-image: url(https://unsplash.it/503/503/)">
-                          <div class="inner">
-                              <p>Clossyo</p>
-                <span>Lorem ipsum</span>
-                          </div>
-                      </div>
-                      <div class="back">
-                          <div class="inner">
-                              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col" ontouchstart="this.classList.toggle('hover');">
-                  <div class="containerCards">
-                      <div class="front" style="background-image: url(https://unsplash.it/504/504/">
-                          <div class="inner">
-                              <p>Rendann</p>
-                <span>Lorem ipsum</span>
-                          </div>
-                      </div>
-                      <div class="back">
-                          <div class="inner">
-                              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col" ontouchstart="this.classList.toggle('hover');">
-                  <div class="containerCards">
-                      <div class="front" style ="background-image: url(https://unsplash.it/505/505/)">
-                          <div class="inner">
-                              <p>Reflupper</p>
-                <span>Lorem ipsum</span>
-                          </div>
-                      </div>
-                      <div class="back">
-                          <div class="inner">
-                              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-         
-          </div>
-   </div> -->
-
-
-
-
-
-
-
 <!-- Modal Cadastrar -->
-<div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content formatMoldal">
-        <button type="button" class="close d-flex justify-content-end mr-2" data-dismiss="modal" aria-label="Fechar" routerLink="/login">
-            <span aria-hidden="true">&times;</span>
-        </button>
-        <div class="text-center">
-          <h5 class="modal-title text-warning" id="modalExemplo">Cadastre-se</h5>  
-        </div>
-
-        <div class="modal-body">
-
-            <div class="form-group">
-                <label for="nome"></label>
-                <input [(ngModel)]='usuario.nome' class='form-control' type="text" name="nome" id="nome" placeholder='Seu nome'>
-            </div>
-
-            <div class="form-group">
-                <label for="sobrenome"></label>
-                <input [(ngModel)]='usuario.sobrenome' class='form-control' type="text" name="sobrenome" id="sobrenome" placeholder='Sobrenome'>
-            </div>
-
-            <div class="form-group">
-                <label for="usuario"></label>
-                <input [(ngModel)]='usuario.usuario' class='form-control' type="text" name="usuario" id="usuario" placeholder='Usuário'>
-            </div>
-
-            <div class="form-group">
-                <label for="email"></label>
-                <input [(ngModel)]='usuario.email' class='form-control' type="email" name="email" id="email" placeholder='E-mail'>
-            </div>
-
-            <div class="form-group">
-                <label for="dataNascimento"></label>
-                <input [(ngModel)]='usuario.dataNascimento' class='form-control' type="date" name="dataNascimento" id="dataNascimento" placeholder='Data de Nascimento'>
-            </div>
-
-            <div class="form-group">
-                <label for="celular"></label>
-                <input [(ngModel)]='usuario.celular' class='form-control' type="number" name="celular" id="celular" placeholder='Telefone Celular'>
-            </div>
-
-            <div class="form-group">
-                <label for="foto"></label>
-                <input [(ngModel)]='usuario.foto' class='form-control' type="text" name="foto" id="foto" placeholder='Link da foto'>
-            </div>
-
-            <div class="form-group">
-                <label for="senha"></label>
-                <input (input)='confirmSenha($event)' class='form-control' type="password" name="senha" id="senha" placeholder='Sua senha'>
-            </div>
-            
-            <div class="form-group">
-                <label for="confirmSenha"></label>
-                <input [(ngModel)]='usuario.senha' class='form-control' type="password" name="confirmSenha" id="confirmSenha" placeholder='Confirme sua Senha'>
-            </div>
-
+        <div class="modal-content formatMoldal">
+            <button type="button" class="close d-flex justify-content-end mr-2" data-dismiss="modal" aria-label="Fechar"
+                routerLink="/login">
+                <span aria-hidden="true">&times;</span>
+            </button>
             <div class="text-center">
-                <a class="btn corBotao btn-lg active" role="button" aria-pressed="true" (click)='cadastrar()' data-dismiss="modal">Cadastrar</a>
+                <h5 class="modal-title text-warning" id="modalExemplo">Cadastre-se</h5>
             </div>
 
+            <div class="modal-body">
+
+                <div class="form-group">
+                    <label for="nome"></label>
+                    <input [(ngModel)]='usuario.nome' class='form-control' type="text" name="nome" id="nome"
+                        placeholder='Seu nome'>
+                </div>
+
+                <div class="form-group">
+                    <label for="sobrenome"></label>
+                    <input [(ngModel)]='usuario.sobrenome' class='form-control' type="text" name="sobrenome"
+                        id="sobrenome" placeholder='Sobrenome'>
+                </div>
+
+                <div class="form-group">
+                    <label for="usuario"></label>
+                    <input [(ngModel)]='usuario.usuario' class='form-control' type="text" name="usuario" id="usuario"
+                        placeholder='Usuário'>
+                </div>
+
+                <div class="form-group">
+                    <label for="email"></label>
+                    <input [(ngModel)]='usuario.email' class='form-control' type="email" name="email" id="email"
+                        placeholder='E-mail'>
+                </div>
+
+                <div class="form-group">
+                    <label for="dataNascimento"></label>
+                    <input [(ngModel)]='usuario.dataNascimento' class='form-control' type="date" name="dataNascimento"
+                        id="dataNascimento" placeholder='Data de Nascimento'>
+                </div>
+
+                <div class="form-group">
+                    <label for="celular"></label>
+                    <input [(ngModel)]='usuario.celular' class='form-control' type="number" name="celular" id="celular"
+                        placeholder='Telefone Celular'>
+                </div>
+
+                <div class="form-group">
+                    <label for="foto"></label>
+                    <input [(ngModel)]='usuario.foto' class='form-control' type="text" name="foto" id="foto"
+                        placeholder='Link da foto'>
+                </div>
+
+                <div class="form-group">
+                    <label for="senha"></label>
+                    <input (input)='confirmSenha($event)' class='form-control' type="password" name="senha" id="senha"
+                        placeholder='Sua senha'>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmSenha"></label>
+                    <input [(ngModel)]='usuario.senha' class='form-control' type="password" name="confirmSenha"
+                        id="confirmSenha" placeholder='Confirme sua Senha'>
+                </div>
+
+                <div class="text-center">
+                    <a class="btn corBotao btn-lg active" role="button" aria-pressed="true" (click)='cadastrar()'
+                        data-dismiss="modal">Cadastrar</a>
+                </div>
+
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>

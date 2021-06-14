@@ -1,4 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+
+
 ul.dropdown
 {
    list-style: none;
+}
+
+
+.icons-nav {
+   font-size: 18pt;
+   
+ }
+
+.f-icons {
+   font-size: 14pt;
+   font-family: 'Teko', sans-serif;
+}
+
+.bg-nav {
+   
+   background: linear-gradient( #0d0938,  #a17aa1);
+   color: white;
+}
+
+.navbar {
+   width: 100%;
+   height: 20%;
+}
+.btn {
+   border-radius: 150px;
+   width: 80%;
+   height: 100%;
+   
+}
+.bt-aceitar  {
+   width: 30%;
+   height: 100%;
+}
+
+.bt-bio {
+   width: 100%;
+   
+   
+
 }

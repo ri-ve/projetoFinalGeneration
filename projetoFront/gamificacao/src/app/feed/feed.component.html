@@ -4,16 +4,16 @@
         <div class="profile-card">
             <header>
               <!-- here’s the avatar -->
-              <a target="_blank" routerLink='/perfil'>
+              <a routerLink='/perfil'>
                 <img src="{{foto}}" class="hoverZoomLink">
               </a>
               <!-- the username -->
               <h1>
-                      {{nome}}
+                      {{nome}} {{usuario.sobrenome}}
                     </h1>
               <!-- and role or location -->
               <h2>
-                      Desenvolvedor
+                      
                     </h2>
             </header>
             <!-- bit of a bio; who are you? -->
@@ -40,7 +40,7 @@
       <div class="list-group mt-tarefas lista">
         <a routerLink="/tarefas" class="list-group-item list-group-item-action">Lista de Tarefas</a>
       
-        <a routerLink='' class="list-group-item list-group-item-action list-group-item-primary" *ngFor = 'let tarefa of usuario.listaTarefas'>{{tarefa.titulo}}</a> 
+        <a routerLink='/tarefas' class="list-group-item list-group-item-action list-group-item-primary" *ngFor = 'let tarefa of usuario.listaTarefas'>{{tarefa.titulo}}</a> 
       </div>
     </div>
 
@@ -48,30 +48,52 @@
     <div class="col-md-6 text-center">
         <div class="d-flex align-items-center form-gorup text-center justify-content-center" >
             <input [(ngModel)] = 'atividades.atividade' type="text" class="col-md-9 text-center justify-content-center" style="height: 40px;" placeholder="Status - Postagem de Pensamentos">
-            <button class="btn btn-info ml-3 justify-content-center" style="height: 40px;" (click)='publicar()'>Postar</button>
+            <button class="btn btn-info ml-3 justify-content-center" style="height: 40px;" 
+            (click)='publicar()'>Postar</button>
         </div>
 
-        <div class="container-fluid border rounded mt-5">
-            <div class="row mb-3 ml-1">Foto grupo + nome grupo</div>
-            <div class="d-flex-column justify-content-center">
-                <h1 class="text-center">Titulo Postagem</h1>
-                <h2 class="text-center mt-3">Pergunta eai qual empresas vocês querem entrar depois da Generetion?</h2>
-                <div class="d-flex flex-column mt-3">
-                    <button class="btn btn-outline-secondary mb-3">Itau</button>
-                    <button class="btn btn-outline-secondary mb-3">Magalu</button>
-                    <button class="btn btn-outline-secondary mb-3">Zup Inovation</button>
-                </div>
-                
-            </div>
+
+        <nav class="mt-3 d-flex justify-content-center">
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Postagem quiz</a>
+            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Pensamentos</a>
+          </div>
+        </nav>
+
+
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <div class="container-fluid border rounded mt-3" *ngFor = 'let quiz of listaPostagens'>
+              <div class="row mb-3 ml-1">Grupo: {{quiz.grupoPostQuiz.nome}}</div>
+              <div class="d-flex-column justify-content-center">
+                  <h1 class="text-center">{{quiz.pergunta}}</h1>
+                  <div class="d-flex flex-column mt-3">
+                      <button class="btn btn-outline-secondary mb-3">{{quiz.respostaCorreta}}</button>
+                      <button class="btn btn-outline-secondary mb-3">{{quiz.respostaFalsa}}</button>
+                      <button class="btn btn-outline-secondary mb-3">{{quiz.respostaFalsa2}}</button>
+                  </div>
+              </div>
+          </div>
+          </div>
+          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <div class="container-fluid border rounded mt-3" *ngFor = 'let atividade of listaAtividades'>
+              <div class="row mb-3 ml-1">
+                {{atividade.usuarioAtividade.nome}} {{atividade.usuarioAtividade.sobrenome}}
+              </div>
+              <div class="d-flex-column justify-content-center">
+                  <h4 class="text-center">{{atividade.atividade}}</h4>
+              </div>
+          </div>
+          </div>
         </div>
     </div> 
 
 
     <div class="col-md-3 text-center">       
         <div class="list-group lista">
-            <a routerLink='' class="list-group-item list-group-item-action">Lista de Grupos</a>
+            <a routerLink='/grupos' class="list-group-item list-group-item-action">Lista de Grupos</a>
             
-            <a routerLink='' class="list-group-item list-group-item-action list-group-item-primary" *ngFor = 'let grupo of usuario.listaInscricaoUG'>{{grupo.grupoInscricao.nome}}</a>
+            <a [routerLink]="['/grupo', grupo.grupoInscricao.id]" class="list-group-item list-group-item-action list-group-item-primary" *ngFor = 'let grupo of usuario.listaInscricaoUG'>{{grupo.grupoInscricao.nome}}</a>
           </div>
     </div>   
 </div>

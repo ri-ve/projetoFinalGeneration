@@ -26,7 +26,7 @@ public class Tarefa {
 	private Boolean status;
 	
 	@ManyToOne
-	@JsonIgnoreProperties({"listaTarefas", "atividadesUsuario"})
+	@JsonIgnoreProperties(value = {"listaTarefas"}, allowSetters = true)
 	private Usuario usuarioResponsavel;
 
 	public long getId() {

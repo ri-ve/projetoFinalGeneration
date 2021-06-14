@@ -25,19 +25,18 @@ public class InscricaoGrupo {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@NotNull
 	@Enumerated (EnumType.STRING)
 	private Aprovacao aprovacao;
 		
 	
-	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
 	@JoinColumn(name = "usuario_id")
-	@JsonIgnoreProperties("listaInscricaoUG")
+	@JsonIgnoreProperties(value ={"listaInscricaoUG","gruposCriados"}, allowSetters = true)
 	private Usuario usuarioInscricao; 
 	
-	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
 	@JoinColumn(name = "grupo_id")
-	@JsonIgnoreProperties({"listaInscricaoGU", "criador"})
+	@JsonIgnoreProperties(value ={"criador", "listaInscricaoGU"}, allowSetters = true)
 	private Grupo grupoInscricao;
 	
 

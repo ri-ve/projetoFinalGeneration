@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.gamificacao.projetogamificacao.Models.AprovacaoAmigos;
 import com.gamificacao.projetogamificacao.Models.Atividades;
 import com.gamificacao.projetogamificacao.Models.Grupo;
+import com.gamificacao.projetogamificacao.Models.InscricaoGrupo;
 import com.gamificacao.projetogamificacao.Models.PostagemQuiz;
 import com.gamificacao.projetogamificacao.Models.Usuario;
 import com.gamificacao.projetogamificacao.Models.UsuarioLogin;
@@ -29,6 +30,8 @@ import com.gamificacao.projetogamificacao.Repository.GrupoRepository;
 
 import com.gamificacao.projetogamificacao.Repository.UsuarioRepository;
 import com.gamificacao.projetogamificacao.Service.UsuarioService;
+
+import ch.qos.logback.core.status.Status;
 
 @RestController
 @CrossOrigin ("*")
@@ -57,8 +60,8 @@ public class UsuarioController  {
 		return ResponseEntity.status(HttpStatus.OK).body(usuarioService.listaAprovacaoAmigos(usuario));
 	}
 	@PutMapping
-	public ResponseEntity <Usuario> putUsuario(@RequestBody Usuario usuario){
-		return ResponseEntity.status(HttpStatus.OK).body(repositoryUser.save(usuario));
+	public ResponseEntity<Optional<Usuario>> atualizarUsuario(@RequestBody Usuario usuario){
+		return ResponseEntity.status(HttpStatus.OK).body(usuarioService.atualizarUsuario(usuario));
 	}
 	@DeleteMapping ("/deletar/{idUsuario}")
 	public void delete (@PathVariable long idUsuario) {
@@ -74,21 +77,15 @@ public class UsuarioController  {
 		return ResponseEntity.status(HttpStatus.CREATED)
 				.body(usuarioService.cadastrarUsuario(usuario));
 	}
-	@PostMapping("/{id_usuario}/novo-grupo")
-	public ResponseEntity<Usuario> criarGrupo(
-			@PathVariable(value = "id_usuario") Long idUsuario,
-			@Valid @RequestBody Grupo novoGrupo){
-		return usuarioService.criarGrupo(novoGrupo, idUsuario)
+	@PostMapping("/novo-grupo")
+	public ResponseEntity<?> criarGrupo(@RequestBody Grupo novoGrupo){
+		return usuarioService.criarGrupo(novoGrupo)
 				.map(usuarioCriador -> ResponseEntity.status(201).body(usuarioCriador))
 				.orElse(ResponseEntity.status(400).build());	
 	}
-	@PostMapping("/inscricao/{id_usuario}/{id_grupo}")
-	public ResponseEntity<?> inscrevendoGrupo(
-		@PathVariable(value = "id_usuario") Long idUsuario,
-		@PathVariable(value = "id_grupo") Long idGrupo){
-		return usuarioService.inscrevendoGrupo(repositoryUser.findById(idUsuario).get(), grupoRepository.findById(idGrupo).get())
-				.map(inscricao -> ResponseEntity.status(201).body(inscricao))
-			.orElse(ResponseEntity.status(400).build());
+	@PostMapping("/inscricao")
+	public ResponseEntity<?> inscrevendoGrupo(@RequestBody InscricaoGrupo inscricao){
+		return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.inscrevendoGrupo(inscricao));
 	}
 	@PostMapping("/post-pensamentos")
 	public ResponseEntity<Atividades> postagemPensamentos(@RequestBody Atividades postagem){

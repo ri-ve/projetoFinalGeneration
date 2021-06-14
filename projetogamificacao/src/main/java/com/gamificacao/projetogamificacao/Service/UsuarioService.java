@@ -48,8 +48,7 @@ public class UsuarioService {
 	public Optional<UsuarioLogin> logar(Optional<UsuarioLogin> user) {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		Optional<Usuario> usuario = repository.findByUsuarioOrEmail(user.get().getUsuario(), user.get().getUsuario());
-		if (usuario.isPresent()) {
-			if (encoder.matches(user.get().getSenha(), usuario.get().getSenha()));
+			if (encoder.matches(user.get().getSenha(), usuario.get().getSenha())) {
 			String auth = user.get().getUsuario() + ":" + user.get().getSenha();
 			byte[] encodeAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
 			String authHeader = "Basic " + new String(encodeAuth);
@@ -62,6 +61,13 @@ public class UsuarioService {
 		}
 		return null;
 	}
+	public Optional<Usuario> atualizarUsuario(Usuario usuario){
+		BCryptPasswordEncoder ecoder = new BCryptPasswordEncoder();
+		String senhaEcoder = ecoder.encode(usuario.getSenha());
+		usuario.setSenha(senhaEcoder);
+		return Optional.ofNullable(repository.save(usuario));	
+	}
+	
 	/**
 	 * Cria um Grupo e seta o usuario existente como seu criador
 	 * 
@@ -72,20 +78,11 @@ public class UsuarioService {
 	 * @since 1.0
 	 * @author Rive
 	 */
-	public Optional<Usuario> criarGrupo(Grupo novoGrupo, Long idUsuario) {
-		return repository.findById(idUsuario).map(usuarioExistente -> {
-			novoGrupo.setCriador(usuarioExistente);
-			repositoryGrupo.save(novoGrupo);
-			Atividades atividade = new Atividades(usuarioExistente.getNome()+ " criou o grupo " 
-			+ novoGrupo.getNome(), usuarioExistente);
-			atividadesRepository.save(atividade);
-			return repository.findById(idUsuario);
-		}).orElse(Optional.empty());
+	public Optional<Grupo> criarGrupo(Grupo novoGrupo) {
+		return Optional.ofNullable(repositoryGrupo.save(novoGrupo));
+			
 	}
-	public Optional<InscricaoGrupo> inscrevendoGrupo(Usuario novoUsuario, Grupo novoGrupo) {
-		InscricaoGrupo inscricao = new InscricaoGrupo();
-		inscricao.setUsuarioInscricao(novoUsuario);
-		inscricao.setGrupoInscricao(novoGrupo);
+	public Optional<InscricaoGrupo> inscrevendoGrupo(InscricaoGrupo inscricao) {
 		inscricao.setAprovacao(Aprovacao.AGUARDANDO);
 		return Optional.ofNullable(inscricaoRepository.save(inscricao));
 	}
@@ -104,11 +101,11 @@ public class UsuarioService {
 		listaInscricao
 			.get()
 			.stream()
-			.forEach(grupo -> {
-				if(grupo.getAprovacao().equals(Aprovacao.APROVADO)) {
-					grupos.add(grupo.getGrupoInscricao());
-				}	
-			});	
+			.forEach(grupo ->
+				
+					grupos.add(grupo.getGrupoInscricao())
+				
+			);	
 		grupos
 			.forEach(listaPostagens -> listaPostagens
 					.getListaPostQuiz()

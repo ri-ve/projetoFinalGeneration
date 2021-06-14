@@ -1,0 +1,137 @@
+<body class="p-5 mr-4">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+
+        <div class="additional">
+          <div class="user-card">
+
+            <div id="addAmigo" class="points center borda">
+              <a (click)="addAmigo()" style="color: white;">{{txtBtnAdAmigo}}</a>
+            </div>
+
+            <div class="img-fluid center">
+              <img class="rounded-circle borda" src={{foto}} width="120px" height="120px">
+            </div>
+
+          </div>
+          <div class="more-info ml-5">
+            <h1>{{usuario.nome}} {{usuario.sobrenome}}</h1>
+            <div class="mt-4">
+            
+
+            
+              <div class="row">
+                <div class="coords">
+                  <span><a style="color: white" href="{{usuario.linkedin}}"><i class="fa fa-linkedin fs-20"
+                        aria-hidden="true"></i>
+                      <p class="fs-24 font">LinkedIn</p>
+                    </a>
+                  </span>
+                </div>  
+                  <div class="coords">
+                    <span><a style="color: white;" href="{{usuario.gitHub}}"><i class="fa fa-github fs-20"
+                          aria-hidden="true"></i>
+                        <p class="fs-24 font">GitHub</p>
+                      </a></span>
+                  </div>
+              </div>
+            
+              
+              
+            </div>
+            <div class="stats">
+              <div>
+                <div class="fs-20">Tarefas</div>
+                <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+                <div class="fs-20">50</div>
+              </div>
+
+              <div>
+                <div class="fs-20">Quizes</div>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <div class="fs-20">25</div>
+              </div>
+              <div>
+                <div class="fs-20">Grupos</div>
+                <i class="fa fa-group" aria-hidden="true"></i>
+                <div class="fs-20">4</div>
+              </div>
+              <div>
+                <div class="fs-20">Clã</div>
+                <i class="fa fa-hand-peace-o" aria-hidden="true"></i>
+                <div class="fs-20">14</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="general mt-4">
+          <h1>{{nome}} {{usuario.sobrenome}}</h1>
+          <p class="mt-4">{{usuario.descricao}}</p>
+          <span class="more mb-4">passe o mouse para saber mais</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-2">
+      <div class="card card-atv">
+        <div class="card-header">
+          Atividade do dia:
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <footer>data - colocar data tempo real</footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="d-flex p-4">
+        <div class="card-softs col-md-6 p-5">
+          <h3 class="text-center">Quadro de forças</h3>
+          <h6>Atenção aos detalhes</h6>
+          <div class="progress mb-2">
+            <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar"
+              style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <h6>Comunicação</h6>
+          <div class="progress mb-2">
+            <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" role="progressbar"
+              style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <h6>Mentalidade de crescimento</h6>
+          <div class="progress mb-2">
+            <div class="progress-bar progress-bar-striped bg-dark progress-bar-animated" role="progressbar"
+              style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <h6>Persistência</h6>
+          <div class="progress mb-2">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-secondary" role="progressbar"
+              style="width: 80%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            </div>
+          </div>
+          <h6>Planejamento</h6>
+          <div class="progress mb-2">
+            <div class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar"
+              style="width: 40%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <h6>Proatividade</h6>
+          <div class="progress mb-2">
+            <div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar"
+              style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <h6>Responsabilidade pessoal</h6>
+          <div class="progress mb-2">
+            <div class="progress-bar progress-bar-striped bg-dark progress-bar-animated" role="progressbar"
+              style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>

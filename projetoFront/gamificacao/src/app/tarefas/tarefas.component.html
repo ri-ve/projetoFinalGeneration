@@ -36,8 +36,8 @@
             </svg>
             
             <div class="todo-list rounded mt-3 mb-5" >
-              <label class="todo" *ngFor='let item of user.listaTarefas'>
-                <input class="todo__state" type="checkbox" />
+              <label class="todo" *ngFor='let item of usuario.listaTarefas' >
+                <input class="todo__state" type="checkbox" (click)='confirmar(item.id)'/>
             
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 25" class="todo__icon">
                   <use xlink:href="#todo__line" class="todo__line"></use>
@@ -46,13 +46,16 @@
                   <use xlink:href="#todo__circle" class="todo__circle"></use>
                 </svg>
             
-                <div class="todo__text">{{item.titulo}}</div>
+                <div class="todo__text">
+                  {{item.titulo}}</div>
                 <div class="d-flex justify-content-end">
-                  <a ng-click="findTarefaById(item.id)" type="button" class="abrir mt-2" data-toggle="modal" data-target="#Tarefa">
+                  <a (click)='findTarefaById(item.id)' type="button" class="abrir mt-2" data-toggle="modal" data-target="#Tarefa">
                     Abrir </a>
                 </div>
               </label>
             </div>
+
+
 
             <!-- Modal -->
 <div class="modal fade" id="Tarefa" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
@@ -72,21 +75,21 @@
         <input [(ngModel)]='tarefa.titulo' type="text" class="form-control bg-transparent text-white mb-2" placeholder="Novo Título">
           <h5>Nova Descrição</h5>
           <textarea [(ngModel)]='tarefa.descricao' class="form-control bg-transparent text-white" name="texto" id="texto" rows="3"></textarea>
-          <button type="button" class="btn btn-outline-success mt-3" (click)='atualizar()'>Salvar</button>
+          <button type="button" class="btn btn-outline-success mt-3" (click)='atualizar()' data-dismiss="modal">Salvar</button>
        </div>
        <div id="deletar" class="collapse text-center">
-         <h5>Tem certeza que deseja deletar tarefa?</h5>
+         <h5>Tem certeza que deseja deletar tarefa {{tarefa.titulo}}?</h5>
 
          <div class="d-flex justify-content-center mt-3 mb-3">
-          <button class="btn btn-outline-success btn-sm " >Não</button>
-          <button class="btn btn-outline-danger btn-sm ml-3" (click)='apagar()'>Sim</button>
-      </div>
+          <button class="btn btn-outline-success btn-sm" data-dismiss="modal" >Não</button>
+          <button class="btn btn-outline-danger btn-sm ml-3" (click)='apagar(tarefa.id)' data-dismiss="modal">Sim</button>
+         </div>
 
        </div>
       </div>
       <div class="modal-footer d-flex justify-content-center">
         <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn-outline-danger" data-toggle="collapse" data-target="#deletar">Deletar</button>
+        <button type="button" class="btn btn-outline-danger" data-toggle="collapse" data-target="#deletar" (click)='findTarefaById(tarefa.id)'>Deletar</button>
         <button type="button" class="btn btn-outline-primary" data-toggle="collapse" data-target="#editar">Editar</button>
       </div>
     </div>
@@ -119,6 +122,3 @@
     </div>
   </div>
 </div>
-
-
-

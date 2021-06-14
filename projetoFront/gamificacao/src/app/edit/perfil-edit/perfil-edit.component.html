@@ -1,0 +1,73 @@
+<div class="modal fade bg-cor" id="modalBio" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-nav">
+        <h5 class="modal-title fs-20" id="exampleModalLabel">Editar perfil</h5>
+        <button [routerLink]="['/perfil-edit', id]" type="button" class="close" data-dismiss="modal" aria-label="Fechar" style="color: white;">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body fs-14">
+        <div class="form-group">
+          <label for="bio">Escreva sobre você:</label>
+          <textarea [(ngModel)]='usuario.descricao' class="form-control" id="bio" rows="4"></textarea>
+        </div>
+        <!--Put de usuário-->
+        <div class="row d-flex justify-content-between">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="bio">Nome:</label>
+              <input [(ngModel)]='usuario.nome' class="form-control" type="text" placeholder="Nome de usuário">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="bio">Sobrenome:</label>
+              <input [(ngModel)]='usuario.sobrenome' class="form-control" type="text"
+                placeholder="Sobrenome de usuário">
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="bio">Foto:</label>
+          <input [(ngModel)]='usuario.foto' class="form-control" type="text" placeholder="Foto de perfil do usuário">
+        </div>
+        <div class="form-group">
+          <label for="bio">Telefone:</label>
+          <input [(ngModel)]='usuario.celular' class="form-control" type="number" placeholder="Telefone">
+        </div>
+        <div class="form-group">
+          <label for="bio">Email:</label>
+          <input [(ngModel)]='usuario.email' class="form-control" type="email" placeholder="Email de usuário">
+        </div>
+        <div class="form-group">
+          <label for="bio">Linkedin:</label>
+          <input [(ngModel)]='usuario.linkedin' class="form-control" type="text" placeholder="Link do LinkedIn">
+        </div>
+        <div class="form-group">
+          <label for="bio">GitHub:</label>
+          <input [(ngModel)]='usuario.gitHub' class="form-control" type="text" placeholder="Link do GitHub">
+        </div>
+
+
+        <div class="modal-footer">
+          <div class="row">
+            <div class="col-md-6 p-1">
+              <button type="button" class="bt-bio btn btn-outline-danger" data-dismiss="modal">Cancelar</button>
+            </div>
+            <div class="col-md-6 p-1">
+              <button type="button" class="bt-bio btn btn-outline-success text-center"
+                (click)='atualizar()'>Confirmar</button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+

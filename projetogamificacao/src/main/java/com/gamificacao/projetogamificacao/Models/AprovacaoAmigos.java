@@ -16,7 +16,7 @@ public class AprovacaoAmigos {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@NotNull
+	
 	@Enumerated (EnumType.STRING)
 	private Aprovacao aprovacaoEnum;
 
