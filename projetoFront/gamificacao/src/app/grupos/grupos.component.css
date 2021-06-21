@@ -1,46 +1,58 @@
-.fotoGrupo{
+@import url("https://fonts.googleapis.com/css2?family=Ranga&family=Teko:wght@300&display=swap");
+
+.fotoGrupo {
   width: 50px;
   height: 50px;
   border-radius: 50%;
 }
 
-h1{
-    color: rgb(250, 204, 0);
-  }
-  h3{
-    color: white;
-  }
-  h5{
-    color: white;
-  }
-  label{
-    color: white;
-  }
-    .cor{
-      background: linear-gradient(180deg, rgba(3, 9, 58, 0.9) 100%, rgba(4, 16, 107, 0.153) 100%);
-   }
-  .abrir{
-    text-decoration: none;
-    color: #27fdc7;
-  }
-  .abrir:hover{
-    color: blue;
-  }
-  .bg-transparent
-  {
-    background-color: rgba(255, 255, 255, 0.349);
-  }
-  
-  
-  html {
-    background: rgb(221, 221, 221);
-  }
-  html {
-    height: 100%;
-    display: flex;
-  }
-  body {
-    width: 100%;
-    margin: auto;
-  }
-  
+h1 {
+  color: rgb(250, 204, 0);
+}
+h3 {
+  color: white;
+}
+h5 {
+  color: white;
+}
+label {
+  color: white;
+}
+.cor {
+  background: #a17aa1;
+  font-family: "Teko", cursive;
+}
+.abrir {
+  text-decoration: none;
+  color: #27fdc7;
+}
+.abrir:hover {
+  color: blue;
+}
+.bg-transparent {
+  background-color: rgba(255, 255, 255, 0.349);
+}
+
+html {
+  background: rgb(221, 221, 221);
+  height: 100%;
+  display: flex;
+}
+body {
+  width: 100%;
+  margin: auto;
+}
+a {
+  font-family: "Teko", sans-serif;
+  color: #313440;
+
+}
+
+a:hover {
+  color: #a17aa1;
+}
+.modal-content {
+  background: linear-gradient(#0b082f, #463546);
+  border: 1px solid #f20f97;
+  border-radius: 10px;
+}

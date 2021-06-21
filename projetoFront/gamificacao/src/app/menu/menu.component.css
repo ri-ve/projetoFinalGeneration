@@ -30,7 +30,8 @@ ul.dropdown
 .btn {
    border-radius: 150px;
    width: 80%;
-   height: 100%;
+   height: 100%; 
+  /*c*/
    
 }
 .bt-aceitar  {
@@ -40,7 +41,10 @@ ul.dropdown
 
 .bt-bio {
    width: 100%;
-   
-   
-
 }
+
+.corModal{
+   background: linear-gradient( #0b082f,  #463546);
+   border: 1px solid #F20F97;
+   border-radius: 10px;
+ }

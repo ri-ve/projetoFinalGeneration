@@ -1,140 +1,240 @@
-<div class="container-fluid bg-cor">
+<div class="cor">
+  <div>
+    <h1 class="fs-54 text-start p-2 text-center">Grupos</h1>
+  </div>
+</div>
+
+<div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
-
-
-      <div class="cor rounded">
-        <div class="mt-5">
-          <h1 class="fs-54 text-start p-2 text-center">Grupos</h1>
-        </div>
-      </div>
-
-
       <div class="d-flex justify-content-between">
         <nav class="mt-3 mb-2 d-flex justify-content-start">
           <div class="nav nav-tabs" id="nav-tab" role="tablist">
-            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
-              aria-controls="nav-home" aria-selected="true">Grupos criados</a>
+            <a
+              class="nav-item nav-link active"
+              id="nav-home-tab"
+              data-toggle="tab"
+              href="#nav-home"
+              role="tab"
+              aria-controls="nav-home"
+              aria-selected="true"
+              >Grupos criados</a
+            >
 
-            <a (click)='findUsuarioById()' class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab"
-              href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Grupos inscritos</a>
+            <a
+              (click)="findUsuarioById()"
+              class="nav-item nav-link"
+              id="nav-profile-tab"
+              data-toggle="tab"
+              href="#nav-profile"
+              role="tab"
+              aria-controls="nav-profile"
+              aria-selected="false"
+              >Grupos inscritos</a
+            >
 
-            <a (click)='findAllGrupos()' class="nav-item nav-link" id="nav-todos-tab" data-toggle="tab"
-              href="#nav-todos" role="tab" aria-controls="nav-todos" aria-selected="false">Todos os Grupos</a>
+            <a
+              (click)="findAllGrupos()"
+              class="nav-item nav-link"
+              id="nav-todos-tab"
+              data-toggle="tab"
+              href="#nav-todos"
+              role="tab"
+              aria-controls="nav-todos"
+              aria-selected="false"
+              >Todos os Grupos</a
+            >
           </div>
         </nav>
 
         <div class="d-flex justify-content-center mt-3 mb-2">
-          <button type="button" class=" btn btn-outline-primary" data-toggle="modal" data-target="#criarGrupo">
+          <button
+            type="button"
+            class="btn btn-warning"style="font-family:Teko, sans-serif;"
+            data-toggle="modal"
+            data-target="#criarGrupo"
+          >
             Criar Grupo
           </button>
         </div>
       </div>
 
-
-
-
       <div class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade show active " id="nav-home"
-          role="tabpanel" aria-labelledby="nav-home-tab">
+        <div
+          class="tab-pane fade show active"
+          id="nav-home"
+          role="tabpanel"
+          aria-labelledby="nav-home-tab"
+        >
           <div class="d-flex flex-row flex-wrap justify-content-center">
-            <div class="mr-2 col-md-3" *ngFor='let grupo of usuario.gruposCriados'>
+            <div
+              class="mr-2 col-md-3"
+              *ngFor="let grupo of usuario.gruposCriados"
+            >
               <div class="card mt-3">
                 <div class="card-body">
-                  <div class="row ml-1 mb-3 d-flex flex-nowrap align-items-center">
-                    <img class='fotoGrupo mr-3' src="{{grupo.foto}}" alt="">
-                    <h2 class="text-truncate">{{grupo.nome}}</h2>
+                  <div
+                    class="row ml-1 mb-3 d-flex flex-nowrap align-items-center"
+                  >
+                    <img class="fotoGrupo mr-3" src="{{ grupo.foto }}" alt="" />
+                    <h2 class="text-truncate">{{ grupo.nome }}</h2>
                   </div>
-                  <p class="card-text text-truncate">{{grupo.descricao}}</p>
-                  <button [routerLink]="['/grupo', grupo.id]" class="btn btn-info">Ver grupo</button>
+                  <p class="card-text text-truncate">{{ grupo.descricao }}</p>
+                  <button
+                    [routerLink]="['/grupo', grupo.id]"
+                    class="btn btn-warning"
+                  >
+                    Ver grupo
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-
-        <div class="tab-pane fade" id="nav-profile" role="tabpanel"
-          aria-labelledby="nav-profile-tab">
+        <div
+          class="tab-pane fade"
+          id="nav-profile"
+          role="tabpanel"
+          aria-labelledby="nav-profile-tab"
+        >
           <div class="d-flex flex-row flex-wrap justify-content-center">
-            <div class="mr-2 col-md-3" *ngFor='let grupo of usuario.listaInscricaoUG'>
+            <div
+              class="mr-2 col-md-3"
+              *ngFor="let grupo of usuario.listaInscricaoUG"
+            >
               <div class="card mt-3">
                 <div class="card-body">
-                  <div class="row ml-1 mb-3 d-flex flex-nowrap align-items-center">
-                    <img class='fotoGrupo mr-3' src="{{grupo.grupoInscricao.foto}}" alt="">
-                    <h2 class="text-truncate">{{grupo.grupoInscricao.nome}}</h2>
+                  <div
+                    class="row ml-1 mb-3 d-flex flex-nowrap align-items-center"
+                  >
+                    <img
+                      class="fotoGrupo mr-3"
+                      src="{{ grupo.grupoInscricao.foto }}"
+                      alt=""
+                    />
+                    <h2 class="text-truncate">
+                      {{ grupo.grupoInscricao.nome }}
+                    </h2>
                   </div>
-                  <p class="card-text text-truncate">{{grupo.grupoInscricao.descricao}}</p>
-                  <button [routerLink]="['/grupo', grupo.id]" class="btn btn-info">Ver grupo</button>
+                  <p class="card-text text-truncate">
+                    {{ grupo.grupoInscricao.descricao }}
+                  </p>
+                  <button
+                    [routerLink]="['/grupo', grupo.grupoInscricao.id]"
+                    class="btn btn-warning"
+                  >
+                    Ver grupo
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="tab-pane fade" id="nav-todos" role="tabpanel"
-          aria-labelledby="nav-todos-tab">
+        <div
+          class="tab-pane fade"
+          id="nav-todos"
+          role="tabpanel"
+          aria-labelledby="nav-todos-tab"
+        >
           <div class="d-flex flex-row flex-wrap justify-content-center">
-            <div class="mr-2 col-md-3" *ngFor='let grupo of todosGrupos'>
+            <div class="mr-2 col-md-3" *ngFor="let grupo of todosGrupos">
               <div class="card mt-3">
                 <div class="card-body">
-                  <div class="row ml-1 mb-3 d-flex flex-nowrap align-items-center">
-                    <img class='fotoGrupo mr-3' src="{{grupo.foto}}" alt="">
-                    <h2 class="text-truncate">{{grupo.nome}}</h2>
+                  <div
+                    class="row ml-1 mb-3 d-flex flex-nowrap align-items-center"
+                  >
+                    <img class="fotoGrupo mr-3" src="{{ grupo.foto }}" alt="" />
+                    <h2 class="text-truncate">{{ grupo.nome }}</h2>
                   </div>
-                  <p class="card-text text-truncate">{{grupo.descricao}}</p>
-                  <button [routerLink]="['/grupo', grupo.id]" class="btn btn-info">Ver grupo</button>
+                  <p class="card-text text-truncate">{{ grupo.descricao }}</p>
+                  <button
+                    [routerLink]="['/grupo', grupo.id]"
+                    class="btn btn-warning"
+                  >
+                    Ver grupo
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-
       </div>
 
-
-
-
-
-
-
-
-
-
-
-
       <!-- Modal Criar Grupos-->
-      <div class="modal fade" id="criarGrupo" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
-        aria-hidden="true">
+      <div
+        class="modal fade"
+        id="criarGrupo"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="TituloModalCentralizado"
+        aria-hidden="true"
+      >
         <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content bg-dark">
+          <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="TituloModalCentralizado">Novo Grupo</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+              <h5 class="modal-title" id="TituloModalCentralizado">
+                Novo Grupo
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Fechar"
+              >
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
               <div class="form-group">
                 <label for="titulo">Nome do grupo</label>
-                <input [(ngModel)]='grupo.nome' type="text" class="form-control bg-transparent text-white" id="titulo"
-                  placeholder="Nome do grupo">
+                <input
+                  [(ngModel)]="grupo.nome"
+                  type="text"
+                  class="form-control bg-transparent text-white"
+                  id="titulo"
+                  placeholder="Nome do grupo"
+                />
               </div>
               <div class="form-group">
                 <label for="titulo">Descrição</label>
-                <textarea [(ngModel)]='grupo.descricao' class="form-control bg-transparent text-white" name="texto"
-                  id="descricao" rows="3" placeholder="Escreva a descrição do grupo aqui"></textarea>
+                <textarea
+                  [(ngModel)]="grupo.descricao"
+                  class="form-control bg-transparent text-white"
+                  name="texto"
+                  id="descricao"
+                  rows="3"
+                  placeholder="Escreva a descrição do grupo aqui"
+                ></textarea>
               </div>
               <div class="form-group">
                 <label for="titulo">Foto</label>
-                <textarea [(ngModel)]='grupo.foto' class="form-control bg-transparent text-white" name="texto"
-                  id="titulo" rows="1" placeholder="Coloque aqui o link da foto"></textarea>
+                <textarea
+                  [(ngModel)]="grupo.foto"
+                  class="form-control bg-transparent text-white"
+                  name="texto"
+                  id="titulo"
+                  rows="1"
+                  placeholder="Coloque aqui o link da foto"
+                ></textarea>
               </div>
               <div class="modal-footer d-flex justify-content-center">
-                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Fechar</button>
-                <button type="button" class="btn btn-outline-primary" data-dismiss="modal" (click)='criarGrupo()'>
-                  Adicionar</button>
+                <button
+                  type="button"
+                  class="btn btn-outline-light"
+                  data-dismiss="modal"
+                >
+                  Fechar
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-outline-success"
+                  data-dismiss="modal"
+                  (click)="criarGrupo()"
+                >
+                  Adicionar
+                </button>
               </div>
             </div>
           </div>

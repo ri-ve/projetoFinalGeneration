@@ -7,6 +7,7 @@ import { Grupo } from '../model/Grupo';
 import { InscricaoGrupo } from '../model/InscricaoGrupo';
 import { PostagemQuiz } from '../model/PostagemQuiz';
 import { Usuario } from '../model/Usuario';
+import { AlertasService } from '../service/alertas.service';
 
 import { GrupoPostService } from '../service/grupo-post.service';
 
@@ -22,20 +23,28 @@ export class PostQuizComponent implements OnInit {
   postQuiz:PostagemQuiz = new PostagemQuiz
   user: Usuario = new Usuario()
   idUser = environment.id
-  
+  txtBotao: string
   
 
  
   constructor(
     private postQuizService: GrupoPostService,
-    private rauter:Router, 
-    private raute:ActivatedRoute
+    private router:Router, 
+    private raute:ActivatedRoute,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit(){
+    window.scroll(0,0)
+    
+    if(environment.token == ''){
+      this.alertas.showAlertInfo('Sua seção expirou, faça o login novamente.')
+      this.router.navigate(['/login'])
+    }
 
    let id = this.raute.snapshot.params['id']
    this.findGrupoById(id)
+   //this.Botao()
   }
 
   findGrupoById(id: number){
@@ -43,13 +52,33 @@ export class PostQuizComponent implements OnInit {
       this.grupo= resp
     })
   }
+
+ /* Botao(){
+    let id = 0
+    this.grupo.listaInscricaoGU.forEach((inscricao: InscricaoGrupo) => {
+      if(inscricao.usuarioInscricao.id == this.idUser){
+        id = 1
+      }
+    })
+
+    if (this.idUser == this.grupo.criador.id){
+      this.txtBotao = "Novo Quiz"
+    } else if (id = 1){
+      document.querySelector("#botaoQuiz")?.setAttribute("style", "display: none;")
+    } else {
+      this.txtBotao = "Se inscrever"
+    }
+  }*/
+  
   publicar(){
     
     this.postQuiz.grupoPostQuiz = this.grupo
     this.postQuizService.postPostagemQuiz(this.postQuiz).subscribe((resp: PostagemQuiz)=>{
       this.postQuiz= resp
-      alert ("Postagem realizada com sucesso!")
+      this.alertas.showAlertSuccess ("Postagem realizada com sucesso!")
       this.postQuiz = new PostagemQuiz()
+      let id = this.raute.snapshot.params['id']
+      this.findGrupoById(id)
     }) 
     
     }
@@ -61,7 +90,7 @@ export class PostQuizComponent implements OnInit {
 
       this.postQuizService.postInscricao(this.inscricao).subscribe((resp: InscricaoGrupo) => {
         this.inscricao = resp
-        alert('Inscrição realizada com sucesso!')
+        this.alertas.showAlertSuccess('Inscrição realizada com sucesso!')
         this.findGrupoById(this.grupo.id)
       })
       

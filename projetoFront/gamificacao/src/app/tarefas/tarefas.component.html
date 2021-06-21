@@ -1,31 +1,33 @@
-<div class="container-fluid bg-cor">
+<div class=" corBg">
+  <h1 class="fs-54 text-start tituloTarefas">Tarefas</h1>
+</div>
+   
+
+<div class="container-fluid font">
+ 
+     
   <div class="row">
       <div class="col-md-12">
- 
-       
-        <div class="cor rounded">
-          <div class="mt-5">
-            <h1 class="fs-54 text-start p-2">Tarefas</h1>
-          </div>
-         </div>
-         
+
+          
+  
         <div class="d-flex justify-content-center mt-3">
-          <button type="button" class=" btn btn-outline-primary" data-toggle="modal" data-target="#criarTarefa">
+          <button type="button" class=" btn btn-warning" data-toggle="modal" data-target="#criarTarefa">
               Nova tarefa
             </button>
-      </div>
+        </div>
 
 
           <svg viewBox="0 0 0 0" style="position: absolute; z-index: -1; opacity: 0;" >
               <defs>
                 <linearGradient id="boxGradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="25" y2="25">
-                  <stop offset="0%" stop-color="#27FDC7" />
-                  <stop offset="100%" stop-color="#0FC0F5" />
+                  <stop offset="0%" stop-color="#FFC107" />
+                  <stop offset="100%" stop-color="#FFC107" />
                 </linearGradient>
             
                 <linearGradient id="lineGradient">
-                  <stop offset="0%" stop-color="#0FC0F5" />
-                  <stop offset="100%" stop-color="#27FDC7" />
+                  <stop offset="0%" stop-color="#FFC107" />
+                  <stop offset="100%" stop-color="#FFC107" />
                 </linearGradient>
             
                 <path id="todo__line" stroke="url(#lineGradient)" d="M21 12.3h168v0.1z"></path>
@@ -49,7 +51,7 @@
                 <div class="todo__text">
                   {{item.titulo}}</div>
                 <div class="d-flex justify-content-end">
-                  <a (click)='findTarefaById(item.id)' type="button" class="abrir mt-2" data-toggle="modal" data-target="#Tarefa">
+                  <a (click)='findTarefaById(item.id)' type="button" class="btn btn-outline-warning btn-sm abrir mt-2" data-toggle="modal" data-target="#Tarefa">
                     Abrir </a>
                 </div>
               </label>
@@ -58,9 +60,9 @@
 
 
             <!-- Modal -->
-<div class="modal fade" id="Tarefa" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+<div class="modal fade " id="Tarefa" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <div class="modal-content bg-dark">
+    <div class="modal-content corModal">
       <div class="modal-header">
         <h3 class="modal-title" id="TituloModalLongoExemplo">{{tarefa.titulo}}</h3>
         <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
@@ -88,7 +90,7 @@
        </div>
       </div>
       <div class="modal-footer d-flex justify-content-center">
-        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-outline-light" data-dismiss="modal">Fechar</button>
         <button type="button" class="btn btn-outline-danger" data-toggle="collapse" data-target="#deletar" (click)='findTarefaById(tarefa.id)'>Deletar</button>
         <button type="button" class="btn btn-outline-primary" data-toggle="collapse" data-target="#editar">Editar</button>
       </div>
@@ -99,7 +101,7 @@
           <!-- Modal Criar Tarefas-->
 <div class="modal fade" id="criarTarefa" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content bg-dark">
+    <div class="modal-content corModal">
       <div class="modal-header">
         <h5 class="modal-title" id="TituloModalCentralizado">Nova Tarefa</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
@@ -109,15 +111,15 @@
       <div class="modal-body">
           <div class="form-group">
               <label for="titulo">Título</label>
-              <input [(ngModel)]='tarefa.titulo' type="text" class="form-control bg-transparent text-white" id="titulo" placeholder="Title">
+              <input [(ngModel)]='tarefa.titulo' type="text" class="form-control bg-transparent text-white" id="titulo" placeholder="Título">
           </div>
           <div class="form-group">
             <label for="titulo">Descrição</label>
             <textarea [(ngModel)]='tarefa.descricao' class="form-control bg-transparent text-white" name="texto" id="texto" rows="3"></textarea>
         </div>
       <div class="modal-footer d-flex justify-content-center">
-        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn-outline-primary" data-dismiss="modal" (click)='publicarTarefa()'> Adicionar</button>
+        <button type="button" class="btn btn-outline-light" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-outline-success" data-dismiss="modal" (click)='publicarTarefa()'> Adicionar</button>
       </div>
     </div>
   </div>

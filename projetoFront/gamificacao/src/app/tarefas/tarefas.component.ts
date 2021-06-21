@@ -29,7 +29,8 @@ export class TarefasComponent implements OnInit {
   constructor(
     private router: Router,
     private tarefasService: TarefasService,
-    private usuarioService: UsuarioService
+    private usuarioService: UsuarioService,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit() {
@@ -66,6 +67,7 @@ export class TarefasComponent implements OnInit {
     
     this.tarefasService.postTarefa(this.tarefa).subscribe((resp: Tarefa) =>{
       this.tarefa = resp
+      this.alertas.showAlertSuccess('Tarefa criada!')
       this.router.navigate(['/feed'])
   
     })
@@ -73,19 +75,22 @@ export class TarefasComponent implements OnInit {
   
   apagar(id: number){
      this.tarefasService.deleteTarefa(id).subscribe(()=>{
-       this.router.navigate(['/feed'])
+      this.alertas.showAlertDanger('Tarefa apagada!')
+      this.router.navigate(['/feed'])
      }) 
   }
 
   atualizar(){
     this.tarefasService.editarTarefa(this.tarefa).subscribe((resp: Tarefa)=>{
+      this.alertas.showAlertInfo('Tarefa atualizada!')
       this.router.navigate(['/feed'])
     })
   }
   
   confirmar(id: number){
     this.tarefasService.confirmarTarefa(id).subscribe((resp : Tarefa )=>{
-      this.status = true})
+      this.status = true
+    })
   }
 
  /* tarefaConcluida(){

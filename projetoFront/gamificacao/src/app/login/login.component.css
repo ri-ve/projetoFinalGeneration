@@ -1,3 +1,8 @@
+
+.btn {
+  width: 40%;
+  margin-top: 2%;
+}
 .caixa{  padding-top: 20px;
   padding-bottom: 20px;}
 body{
@@ -120,31 +125,6 @@ body{
   
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .cor{
     background: linear-gradient(180deg, rgba(3, 9, 58, 0.9) 0%, rgba(3, 9, 58, 0.18) 80.73%), #FFFFFF;
 }
@@ -166,10 +146,6 @@ body{
 
 .youwen{
     margin: 7rem;
-}
-
-.letra{
-    font: ranga;
 }
 
 .cardLogin{
@@ -194,13 +170,13 @@ body{
 
 .color1{
     background-color: rgba(255, 255, 255, 0.01);
-    border: 2px solid #FCE300;
+    border: 2px solid #FFC107;
     border-radius: 10px;
 }
 
 .color2{
     background-color: rgba(253, 253, 253, 0.02);
-    border: 2px solid #FCE300;
+    border: 2px solid  #FFC107;
     border-radius: 10px;
 }
 
@@ -211,16 +187,11 @@ body{
 }
 
 .formatMoldal{
-    background: linear-gradient(180deg, rgba(3, 9, 58, 0.9) 0%, rgba(3, 9, 58, 0.18) 80.73%), #FFFFFF;
+    background:linear-gradient(180deg, rgba(3, 9, 58, 0.9) 0%, rgba(3, 9, 58, 0.18) 80.73%), #FFFFFF;
     border: 2px solid #F20F97;
     border-radius: 10px;
 }
-
-
-
-
-
-
+ 
 
 
 .fotos{
@@ -331,7 +302,7 @@ body{
   .inner{
       -webkit-transform: translateY(-50%) translateZ(60px) scale(0.94);
       transform: translateY(-50%) translateZ(60px) scale(0.94);
-      top: 50%;
+      top: 70%;
       position: absolute;
       left: 0;
       width: 100%;
@@ -343,6 +314,21 @@ body{
       perspective: inherit;
       z-index: 2;
   }
+  .inner2{
+    -webkit-transform: translateY(-50%) translateZ(60px) scale(0.94);
+    transform: translateY(-50%) translateZ(60px) scale(0.94);
+    top: 50%;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: 1px solid transparent;
+    -webkit-perspective: inherit;
+    perspective: inherit;
+    z-index: 2;
+}
   
   .containerCards .back{
     -webkit-transform: rotateY(180deg);
@@ -428,8 +414,45 @@ ul.social-network li{
    display: inline;
    margin-right: 10%;
    margin-block-start: 50%;
+
+}
+.imagem {
+  position: relative;
+  display: inline-block;
+  border-radius: 50%;
+  height: 128px;
+  margin: 2rem;
+  width: 121px;
+  left: 70px;
+  top: 1px;
+}
+.foto {
+  display: inline-block;
+  border-radius: 50%;
+  height: 128px;
+  margin: 2rem;
+  width: 121px;
+  left: 70px;
+  top: 1px;
+}
+.capa {
+  display: none; 
+}
+.texto{
+    margin-top: 40%;
 }
 
+.imagem:hover .capa {
+  display: block;
+  border-radius: 50%;
+}
 
-
-  
+.capa {
+  background: rgba(0, 0, 0, 0.4);
+  height: 128px;
+  margin: 2rem;
+  width: 121px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+}

@@ -1,3 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Ranga:wght@700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+
 .bg-cor{
-    background: linear-gradient(180deg, rgba(3, 9, 58, 0.9) 26.04%, rgba(4, 16, 107, 0.153) 100%);
+   
+    background: linear-gradient(180deg, rgba(3, 9, 58, 0.86) 8.2%, rgba(0, 2, 47, 0.87) 19.79%, rgba(3, 9, 58, 0.76) 34.9%, rgba(18, 3, 58, 0.38) 100%), #FFFFFF;
+} 
+
+ .font-geral {
+     font-size: 14px;
+     font-family: 'Teko', cursive;
  }
+
+
+ .font-descricao {
+    font-size: 27px;
+    font-family: 'Teko', cursive;
+ }
+
+
+ .font {
+     font-family: 'Teko', cursive;
+ 
+ }
+
+
+ .titulo-site {
+     
+    font-family: 'Ranga', cursive;
+    font-weight: bold;
+    text-align: center;
+    color: #FFC107;
+    
+    
+     }
+    
+     .font-texto {
+     font-family: 'Ranga', cursive;
+     font-size:  14pt;
+     }
+
+     .cor-input {
+        border-color: #FFC107;
+     }
+     
+     .f-80 {
+        font-size: 70pt;
+    }
+     .fs-16 {
+         font-size: 16pt;
+     } 
+     .size-titulo {
+    font-size: 50pt;
+     }
+    
+     .borda-titulo {
+         -webkit-text-stroke-color: #F20F97;
+         -webkit-text-stroke-width: 1px;
+     }
+

@@ -3,7 +3,6 @@ package com.gamificacao.projetogamificacao.controller;
 import java.util.List;
 import java.util.Optional;
 
-import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -31,7 +30,6 @@ import com.gamificacao.projetogamificacao.Repository.GrupoRepository;
 import com.gamificacao.projetogamificacao.Repository.UsuarioRepository;
 import com.gamificacao.projetogamificacao.Service.UsuarioService;
 
-import ch.qos.logback.core.status.Status;
 
 @RestController
 @CrossOrigin ("*")

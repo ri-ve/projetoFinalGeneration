@@ -48,7 +48,7 @@ h3 {
   width: 100%;
   height: 160px;
   
-  
+  /*come*/
 }
 .card-header {
   background: linear-gradient( #0d0938,  #a17aa1);
@@ -211,4 +211,3 @@ a {
   right: 1rem;
   font-size: 0.9em;
 }
-

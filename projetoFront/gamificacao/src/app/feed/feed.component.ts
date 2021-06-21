@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Atividades } from '../model/Atividades';
 import { PostagemQuiz } from '../model/PostagemQuiz';
 import { Usuario } from '../model/Usuario';
+import { AlertasService } from '../service/alertas.service';
 import { AtividadesService } from '../service/atividades.service';
 import { FeedServiceService } from '../service/feed-service.service';
 import { UsuarioService } from '../service/usuario.service';
@@ -29,14 +30,15 @@ export class FeedComponent implements OnInit {
     private router: Router,
     private feedService: FeedServiceService,
     private usuarioService: UsuarioService,
-    private atividadeService: AtividadesService
+    private atividadeService: AtividadesService,
+    private alertas: AlertasService
       ) { }
 
   ngOnInit(){
     window.scroll(0,0)
     
     if(environment.token == ''){
-      alert('Sua seção expirou, faça o login novamente.')
+      this.alertas.showAlertInfo('Sua seção expirou, faça o login novamente.')
       this.router.navigate(['/login'])
     }
 
@@ -70,7 +72,7 @@ export class FeedComponent implements OnInit {
 
     this.feedService.postAtividade(this.atividades).subscribe((resp: Atividades) => {
       this.atividades = resp
-      alert('Postagem realizada com sucesso!')
+      this.alertas.showAlertSuccess('Postagem realizada com sucesso!')
       this.atividades = new Atividades()
     })
   }

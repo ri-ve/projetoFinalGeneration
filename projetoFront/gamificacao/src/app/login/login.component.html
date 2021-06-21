@@ -1,52 +1,85 @@
-<div class="container-fluid cor">
+<div class="container-fluid bg-cor">
 
     <div class="row">
 
-        <div class="col-md-6" id="">
-            <h1 class="mt-5 mb-5 youwen">YOU WEN</h1>
+        <div class="col-md-6 d-flex flex-column justify-content-end align-items-center">
+            <h1 class="mt-5 mr-4 titulo-site borda-titulo f-80">YOU WIN</h1>
+            <div class="row">
+                <div class="imagem ">
+                    <img class="foto" src="https://images-ext-2.discordapp.net/external/N5EgmZXtq1_cK5Af0G5deulEuR3-RjnpFweTQLYNXYU/https/i.imgur.com/WMSzHhD.png?width=473&height=473">
+                    <div class="capa font-geral text-white fs-16">
+                      <p class="text-center texto">Atenção aos detalhes</p>
+                    </div>
+                </div>
+    
+                <div class="imagem ">
+                    <img class="foto" src="https://images-ext-1.discordapp.net/external/Q8YphFZ5TNlsVPS92jFNuW0qFPiQM12XGFM5f82Loas/https/i.imgur.com/8gqGzjD.png?width=473&height=473" >
+                    <div class="capa font-geral text-white fs-16">
+                        <p class="text-center texto">Comunicação</p>
+                    </div>
+                </div>
+    
+                <div class="imagem ">
+                    <img class="foto" src="https://images-ext-2.discordapp.net/external/yZYVtvsMdwUxRR4J8ESnzehNr2FVs-GYUwu6KyDC1Gs/https/i.imgur.com/7SmbZV0.png?width=473&height=473" >
+                    <div class="capa font-geral text-white fs-16">
+                        <p class="text-center texto">Persistência</p>
+                    </div>
+                </div>
+            </div>
 
-            <div class="card"></div>
-            <div class="card card-1"></div>
-            <div class="card card-2"></div>
-            <div class="card card-3"></div>
-            <div class="card card-4"></div>
-            <div class="card card-5"></div>
+            <div class="row">
+                <div class="imagem ">
+                    <img class="foto" src="https://images-ext-1.discordapp.net/external/msdp3Hcx-7t7qx8qqAw7QR1FZfedZqF8aSXo-W7zfXU/https/i.imgur.com/0qQYqwE.png?width=473&height=473" >
+                    <div class="capa font-geral text-white fs-16">
+                      <p class="text-center texto">Planejamento</p>
+                    </div>
+                </div>
+    
+                <div class="imagem">
+                    <img class="foto" src="https://i.imgur.com/5ODWGRB.png" >
+                    <div class="capa font-geral text-white fs-16">
+                        <p class="text-center texto">Mentalidade de crescimento</p>
+                    </div>
+                </div>
+    
+                <div class="imagem ">
+                    <img class="foto " src="https://images-ext-2.discordapp.net/external/W6NbkPy68M-MIraXZv5cEh-I0hWScCwtU6FWmin4QZ8/https/i.imgur.com/Fi9EeV1.png?width=473&height=473" >
+                    <div class="capa font-geral text-white fs-16">
+                        <p class="text-center texto">Proatividade</p>
+                    </div>
+                </div>
+
+
+            </div>
+        
 
         </div>
 
   <!-- card login 
         <div class="col-md-6">
             <div class="row justify-content-end text-warning">
-
                 <div class="cardLogin">
                     <div class="col-md-12 text-center">
-
                         <div class="form-group text-center mt-4 mb-1">
                             <label for="usuario">NICKNAME</label>
                             <input [(ngModel)]='usuarioLogin.usuario' class='form-control color1' type="text"
                                 name="usuario" id="usuario">
                         </div>
-
                         <div class="form-group text-center mt-2 mb-1">
                             <label for="senha">SENHA</label>
                             <input [(ngModel)]='usuarioLogin.senha' class='form-control color2' type="password"
                                 name="senha" id="senha">
                         </div>
-
                         <a class="text-center text-white">Esqueceu sua senha?</a>
-
                         <div class="text-center mt-2 mb-2">
                             <button type="submit" class="btn corBotao" (click)='login()'>Entrar</button>
                         </div>
-
                         <div class="text-center">
                             <button type="submit" class="btn corBotao" data-toggle="modal"
                                 data-target="#modalExemplo">Criar conta</button>
                         </div>
-
                     </div>
                 </div>
-
             </div>
         </div> -->
 
@@ -65,26 +98,26 @@
                   <span></span>
                   <div class="content">
                   
-                    <div class="form-group text-center mt-4 mb-1">
+                    <div class="form-group text-center mt-4 mb-1 fs-16 titulo-site">
                         <label for="usuario">NICKNAME</label>
-                        <input [(ngModel)]='usuarioLogin.usuario' class='form-control color1' type="text"
+                        <input [(ngModel)]='usuarioLogin.usuario' class='form-control color1 font text-white' type="text"
                             name="usuario" id="usuario">
                     </div>
 
-                    <div class="form-group text-center mt-2 mb-1">
+                    <div class="form-group text-center mt-2 mb-1 fs-18 titulo-site">
                         <label for="senha">SENHA</label>
-                        <input [(ngModel)]='usuarioLogin.senha' class='form-control color2' type="password"
+                        <input [(ngModel)]='usuarioLogin.senha' class='form-control color2 font text-white' type="password"
                             name="senha" id="senha">
                     </div>
 
-                    <a class="text-center text-white">Esqueceu sua senha?</a>
+                
 
                     <div class="text-center mt-2 mb-2">
-                        <button type="submit" class="btn corBotao" (click)='login()'>Entrar</button>
+                        <button type="submit" class="btn btn-outline-warning font-texto" (click)='login()'>Entrar</button>
                     </div>
 
                     <div class="text-center">
-                        <button type="submit" class="btn corBotao" data-toggle="modal"
+                        <button type="submit" class="btn btn-outline-warning font-texto" data-toggle="modal"
                             data-target="#modalExemplo">Criar conta</button>
                     </div>
 
@@ -99,60 +132,29 @@
     </div>
 
 
+    <div class="col-md-12 ml-5 mt-5">
 
+        <div class="row d-flex justify-content-center">
+           
+                <div class="col-md-4 d-flex flex-column align-items-center justify-content-center">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-
-    <div class="container d-flex justify-content-between">
-
-        <div class="row">
-
-            <div class="col-md-6">
-
-                <h1 class="mb-5 mt-0">O QUE É GAMEFICAÇÃO?</h1>
-
-                <p class="text-justify">
-                    AUISDIAHDUIASIODASOSFASOIFH ASIFHASOIFHASCHASIOASCNIASO ICASNOCISAFIOASFASI
-                    OFHOIASJ XAOXAAFNASIOFSAÇK KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKAUISDIAHDU
-                    IASIODASOSFASOIFH ASIFHASOIFHASCHASIOASCNIASOICASNOCI SAFIOASFASIOFHOIASJXAO
-                    XAAFNASIOFSA ÇKKKKKKKKKKKKKKKKKKKKKKKK KKKKKKKKKKKKKKKKAUISDI AHDUIASIODASOSF
-                    ASOIFHASIFHASOIFHAS CHASIOASCNIASOICAS NOCISAFIOASFASIOjtf dhsdfwswfwwsfegrnn
-                </p>
-
+                    <h1 class="mb-5 mt-5 titulo-site size-titulo borda-titulo">Por que gamificar?</h1>
+    
+                    <p class="text-justify font-descricao text-white">
+                        “Os jogos não nos desviam de nossas vidas reais. Eles preenchem nossas vidas reais: com emoções positivas, atividade positiva, experiências positivas e forças positivas. [...]  
+                        Se nos comprometermos com a exploração do poder dos jogos para produzir a verdadeira felicidade e a verdadeira mudança, então uma realidade melhor será mais do que provável - será possível. E, nesse caso, nosso futuro juntos será absolutamente extraordinário.” (Jane McGonigal, A Realidade em Jogo)
+    
+                    </p>
+    
+                </div>
+    
+                <div class="col-md-6 d-flex justify-content-center">
+                    <img src="https://i.imgur.com/1pGoQWK.png?1" style="height: 400px; width: 600px;" alt="">
+                </div>
             </div>
+            
 
-            <div class="col-md-6 d-flex justify-content-end">
-                <img src="https://i.imgur.com/18cqhB5.png" style="height: 400px; width: 400px;" alt="">
-            </div>
+          
 
         </div>
     </div>
@@ -163,49 +165,49 @@
     <!-- cards que viram -->
 
     <div class="row">
-        <div class="col-md-12 m-0">
+        <div class="col-md-12 mt-5">
 
             <div class="wrapper fotos">
-                <h1 class="cardH1">Se me atacar, eu vou atacar!</h1>
-                <div class="cols">
+                <h1 class="titulo-site borda-titulo size-titulo">Nosso time</h1>
+                <div class="cols font-texto ">
                     <div class="m-2" ontouchstart="this.classList.toggle('hover');">
                         <div class="containerCards cardPessoal">
                             <div class="front" style="background-image: url(https://i.imgur.com/H7mqw0h.jpg)">
                                 <div class="inner">
-                                    <p>Usuário</p>
-                                    <span>Desenvolvedor Jr.</span>
+                                    <p>Generation Brasil</p>
+                                    <h5>Desenvolvor Jr.</h5>
                                 </div>
                             </div>
                             <div class="back">
-                                <div class="inner">
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                <div class="inner2">
+                                    <p>Tia Gen aqui, gostariamos de agradecer por nos ensinarem do zero e nos ajudarem a realização desse projeto!</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="m-2" ontouchstart="this.classList.toggle('hover');">
                         <div class="containerCards cardPessoal">
-                            <div class="front" style="background-image: url(https://i.imgur.com/drqwsV5.jpg)">
+                            <div class="front" style="background-image: url(https://images-ext-1.discordapp.net/external/9zHDqdBTsDUrHibb947N3v1trNXVA0273PPjN80ny9k/%3Fv%3D4/https/avatars.githubusercontent.com/u/76970525)">
                                 <div class="inner">
                                     <p>Rodrigo</p>
-                                    <span>Desenvolvedor Jr.</span>
+                                    <h5>Desenvolvor Jr.</h5>
                                 </div>
                             </div>
                             <div class="back">
-                                <div class="inner">
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                                <div class="inner2">
+                                    <p>Extremamente motivado, em constante  desenvolvimento.</p>
                                     <ul class="social-network">
                                         <li>
-                                            <a href="https://www.instagram.com/allandeyvisond/" target="_blank"
+                                            <a href="https://www.instagram.com/rodrigo_teixera/" target="_blank"
                                                 class="icoInstagram">
                                                 <i class="fa fa-instagram" aria-hidden="true"></i></a>
                                         </li>
                                         <li>
-                                            <a href="https://github.com/AllanDeyvison" target="_blank" class="icoGithub">
+                                            <a href="https://github.com/RodrigoTeixeiraC" target="_blank" class="icoGithub">
                                                 <i class="fa fa-github" aria-hidden="true"></i></a>
                                         </li>
                                         <li>
-                                            <a href="https://www.linkedin.com/in/allan-deyvison-573b0a1b3/" target="_blank"
+                                            <a href="https://www.linkedin.com/in/rodrigo-teixeira-59b728103/" target="_blank"
                                                 class="icoLikedin">
                                                 <i class="fa fa-linkedin" aria-hidden="true"></i></a>
                                         </li>
@@ -219,12 +221,12 @@
                             <div class="front" style="background-image: url(https://i.imgur.com/3Dni1F0.jpg)">
                                 <div class="inner">
                                     <p>Liz</p>
-                                    <span>Desenvolvedora Jr.</span>
+                                    <h5>Desenvolvora Jr.</h5>
                                 </div>
                             </div>
                             <div class="back">
-                                <div class="inner">
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                <div class="inner2">
+                                    <p>Duas palavras definem minha trajetória: flexibilidade e entusiasmo, pois quem endurece nunca vence.</p>
                                     <ul class="social-network">
                                         <li>
                                             <a href="https://www.instagram.com/allandeyvisond/" target="_blank"
@@ -247,18 +249,21 @@
                     </div>
                     
                 </div>
-                <div class="cols mt-0">
+                <div class="cols mt-0 font-texto">
                     <div class="m-2" ontouchstart="this.classList.toggle('hover');">
                         <div class="containerCards cardPessoal">
-                            <div class="front" style="background-image: url(https://i.imgur.com/hih5mor.jpg)">
+                            <div class="front" style="background-image: url(https://images-ext-2.discordapp.net/external/wucDd_hUNtt6p1buh68ovOEKXyCwOEO_9VHHKfYgNrY/https/i.imgur.com/0nVdBBT.jpg?width=471&height=473)">
                                 <div class="inner">
                                     <p>Allan</p>
-                                    <span>Desenvolvedor Jr.</span>
+                                    <h5>Desenvolvor Jr.</h5>
                                 </div>
                             </div>
                             <div class="back">
-                                <div class="inner">
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                                <div class="inner2">
+                                    <p>Extremamente motivado, em constante  desenvolvimento.
+                                    
+
+                                    </p>
                                     <ul class="social-network">
                                         <li>
                                             <a href="https://www.instagram.com/allandeyvisond/" target="_blank"
@@ -284,13 +289,12 @@
                             <div class="front" style="background-image: url(https://i.imgur.com/7rn6yaP.jpg)">
                                 <div class="inner">
                                     <p>Kátia</p>
-                                    <span>Desenvolvedora Jr.</span>
+                                    <h5>Desenvolvora Jr.</h5>
                                 </div>
                             </div>
                             <div class="back">
-                                <div class="inner">
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
-                                        suscipit c.</p>
+                                <div class="inner2">
+                                    <p>Extremamente motivado, em constante  desenvolvimento.</p>
                                     <ul class="social-network">
                                         <li>
                                             <a href="https://www.instagram.com/allandeyvisond/" target="_blank"
@@ -313,28 +317,27 @@
                     </div>
                     <div class="m-2" ontouchstart="this.classList.toggle('hover');">
                         <div class="containerCards cardPessoal">
-                            <div class="front" style="background-image: url(https://i.imgur.com/Paz0RuV.jpg)">
+                            <div class="front" style="background-image: url(https://images-ext-2.discordapp.net/external/y_EWX0MrHrStfC-lGVOZh3dvajX-nHy51WDlX1E49YA/%3F2/https/i.imgur.com/PbsYan5.jpg?width=538&height=473)">
                                 <div class="inner">
                                     <p>Rive</p>
-                                    <span>Desenvolvedor Jr.</span>
+                                    <h5>Desenvolvor Jr.</h5>
                                 </div>
                             </div>
                             <div class="back">
-                                <div class="inner">
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae
-                                        suscipit c.</p>
+                                <div class="inner2">
+                                    <p>Extremamente motivado, em constante  desenvolvimento.</p>
                                     <ul class="social-network">
                                         <li>
-                                            <a href="https://www.instagram.com/allandeyvisond/" target="_blank"
+                                            <a href="" target="_blank"
                                                 class="icoInstagram">
                                                 <i class="fa fa-instagram" aria-hidden="true"></i></a>
                                         </li>
                                         <li>
-                                            <a href="https://github.com/AllanDeyvison" target="_blank" class="icoGithub">
+                                            <a href="https://github.com/ri-ve" target="_blank" class="icoGithub">
                                                 <i class="fa fa-github" aria-hidden="true"></i></a>
                                         </li>
                                         <li>
-                                            <a href="https://www.linkedin.com/in/allan-deyvison-573b0a1b3/" target="_blank"
+                                            <a href="https://www.linkedin.com/in/rivelino-desenvolvedor-java/" target="_blank"
                                                 class="icoLikedin">
                                                 <i class="fa fa-linkedin" aria-hidden="true"></i></a>
                                         </li>

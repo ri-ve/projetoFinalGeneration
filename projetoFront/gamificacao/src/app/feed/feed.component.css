@@ -6,6 +6,31 @@
     margin-top: 470px;
 }
 
+.fs-30{
+  font-size: 25pt;
+}
+
+.nav-feed{
+  color: #313440;
+}
+
+.nav-feed:hover{
+  color: #a17aa1;
+}
+
+.fs-18{
+  font-size: 18pt;
+}
+
+.fs-14{
+  font-size: 14pt;
+}
+
+.card-header {
+  background: linear-gradient( #0d0938,  #a17aa1);
+  color: white;
+}
+
 html {
     height: 100%;
   }
@@ -57,7 +82,7 @@ html {
   }
   
   .profile-card {
-    background: #FFB300;
+    background: #ffc107;
     width: 56px;
     height: 56px;
     position: absolute;
@@ -93,7 +118,7 @@ html {
   }
   
   .profile-card header h1 {
-    color: #FF5722;
+    color: black;
   }
   
   .profile-card header a {

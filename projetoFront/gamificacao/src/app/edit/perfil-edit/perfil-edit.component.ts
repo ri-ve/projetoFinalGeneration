@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario } from 'src/app/model/Usuario';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { AuthService } from 'src/app/service/auth.service';
 import { UsuarioService } from 'src/app/service/usuario.service';
 import { environment } from 'src/environments/environment.prod';
@@ -24,7 +25,8 @@ export class PerfilEditComponent implements OnInit {
     private usuarioService: UsuarioService,
     private authService: AuthService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private alertas: AlertasService
 
   ) { }
 
@@ -51,7 +53,7 @@ atualizar() {
     this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
       this.usuario = resp
       this.router.navigate(['/login'])
-      alert('Usuário atualizado com sucesso!') 
+      this.alertas.showAlertSuccess('Usuário atualizado com sucesso!') 
     })
   } 
   }
